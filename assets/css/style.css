@@ -1,0 +1,389 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    gap: 2rem;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+.intro{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.8rem 3rem;
+    margin: 0 auto;
+    height: auto;   
+}
+
+aside{
+    background-image: url('../img/lovehot.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%; 
+    border-bottom: 0.2rem solid rgb(131, 131, 136);
+    color: rgb(41, 11, 58);
+    font-size: 2rem;
+}
+
+.sec{
+    min-height: 100vh;
+    background-color: rgb(41, 11, 58);
+}
+
+
+ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 3rem;
+}
+
+ul li a{
+    display: block;    
+    text-decoration-line: none;
+    color:rgb(41, 11, 58);
+    padding: 1rem; 
+    position: relative;
+   
+}
+
+ul li a::after{
+    content: "";
+    background-color: red;
+    transition: all 300ms ease-in-out;
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    left: 50%;
+    bottom: 0%;
+    border-bottom: 0.2rem;
+}
+
+ul li a:hover::after{
+    background-color: red;
+    height: 1rem;
+    bottom: 0%;
+    content: "";
+    width: 100%;
+    height: 0.1rem;
+    left: 0%;
+    border-bottom: 0.1rem;
+   
+    
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10rem;
+}
+
+.conteudo p{
+    font-size: 3.5rem;
+    text-align: justify;
+    color: white;
+}
+
+.conteudo1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem 4rem;
+    z-index: 10;
+}
+
+
+.jogofinal{
+    display: grid;
+    grid-template-columns: 240px 3fr;
+    width: 100vw;
+    max-height: 95vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.jogofinal p{
+    font-size: 1.8rem;
+    text-align: justify;
+    color: white;
+}
+
+.jogofinal img{
+    width: 40px;
+    height: 40px;
+    padding: 0.1rem 0;
+    display: block;
+}
+
+
+.colunaesq{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 0.5rem;
+    margin-top: 5rem;
+    
+}
+
+.colunaesq button, .colunaesq label img{
+    border-radius: 50%;
+    background-color: rgb(41, 11, 58);
+    border: 0 transparent rgb(41, 11, 58);
+}
+
+
+.colunaesq img{
+    margin: 0 auto;
+}
+
+#home img{
+    width: 150px;
+    height: 150px; 
+    padding: 3rem;
+}
+
+.home .b{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+
+legend{
+    color: white;
+}
+
+
+.seletores input{
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+
+#jogar .jogo{
+    
+    display: flex;
+    flex-flow: column wrap;
+    background-image: url("");
+    background-position: center;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    
+     
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 8rem;
+    
+}
+
+.colunadir{
+    display: grid;
+    height: 90vh;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.colunadir .jogo{
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5rem;
+    color: yellow;
+}
+.colunadir .jogo button{
+    font-size: 3rem;
+    width: 8rem;
+    height: 8rem;
+    margin: 2rem;
+}
+
+.resultadojogo{
+    font-size: 5rem;
+    color: whitesmoke;
+}
+
+
+.colunadir .versus img{
+    width: 80px;
+    height: 80px;
+    
+}
+
+.regra{
+    
+    counter-reset: x;
+}
+
+h2{
+    font-size: 3.5rem;
+    color:rgb(41, 11, 58);
+    text-align: center;
+}
+
+.regra p{
+    font-size: 2.4rem;
+    padding: 0.3rem 0;
+    font-weight: 800;
+    color: rgb(41, 11, 58);
+}
+
+.regra p::before{
+    counter-increment: x;
+    content: counter(x);
+    font-size: 5rem;
+}
+
+.conteudo h1{
+    font-size: 4rem;
+    color: white;
+}
+
+.play{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.play p{
+    margin-top: 3rem;
+    font-size: 2rem;
+    align-items: initial;
+}
+
+.play ol{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 5rem;
+    margin-top: 3rem;
+    margin-left: 5rem;
+
+}
+
+.play ol li{
+    font-size: 2rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px;
+    
+}
+
+.play ol li a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.bot button{
+    background-color: rgb(187, 51, 51);
+    width: 10rem;
+    height: 10rem;
+    
+    padding: 2rem;
+}
+
+.img1{
+    background-color: #f3eaea;
+    padding: 8rem 2rem;
+    
+}
+
+.reg{
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 50px;
+    
+    margin-bottom: 50px;
+
+}
+
+.regra{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.regra img{
+    left: 0;
+    
+    height: 300px;
+    width: 300px;
+}
+
+.img2{
+    background-image: url("../img/363ef50e1dd3dbe94e0b33f09082de30.jpeg");
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+
+.versus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight:800;
+    margin: 0 auto;
+    color: yellow;
+    
+}
+
+.versus img{
+    width: 20rem;
+    height: 10rem;
+}
+
+.verdade img{
+    width: 1rem;
+    height: 1rem;
+}
+
+footer{
+    text-align: center;
+    color: white;
+    background-color: rgb(12, 1, 19);
+   
+    
+}
+
+footer p{
+    margin: 0 auto;
+    transition: 300ms all ease-in-out;
+    font-size: 2rem;
+}
+
+footer p:hover{
+    background-color: rgb(240, 231, 231);
+    color: black;
+}
+
+
+
+
+@media (max-width=800px){
+
+}
