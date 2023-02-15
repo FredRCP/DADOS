@@ -260,7 +260,7 @@ h2{
 
 .conteudo h1{
     font-size: 4rem;
-    color: white;
+    color: rgb(41, 11, 58);
 }
 
 .play{
@@ -275,6 +275,7 @@ h2{
     margin-top: 3rem;
     font-size: 2rem;
     align-items: initial;
+    color: rgb(41, 11, 58);
 }
 
 .play ol{
@@ -288,7 +289,7 @@ h2{
 
 .play ol li{
     font-size: 2rem;
-    color: white;
+    color: rgb(41, 11, 58);
     justify-content: center;
     align-items: center;
     text-shadow: 2px;
@@ -297,7 +298,7 @@ h2{
 
 .play ol li a{
     text-decoration: none;
-    color: white;
+    color: rgb(41, 11, 58);
     cursor: pointer;
 }
 
@@ -335,17 +336,14 @@ h2{
 
 .regra img{
     left: 0;
-    
     height: 300px;
     width: 300px;
 }
 
 .img2{
-    background-image: url("../img/363ef50e1dd3dbe94e0b33f09082de30.jpeg");
-    background-position: center;
-    background-size: cover;
-    
-    
+    background-image: url("/img/clave9.jpg");
+    background-position: center center;
+    background-size: contain;  
 }
 
 .versus{
