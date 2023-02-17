@@ -81,6 +81,9 @@ class Jogador{
         if(this.pecas>0){
             this.pecas-=1;
             this.roupas.pop();
+            alert(this.nome + ' retire ' + this.roupas1[this.pecas]);
+            console.log(this.nome + ' retire ' + this.roupas1[this.pecas]);
+            mulher.listarroupasm;
             if(this.pecas===1){return console.log("O clima está esquentando! Você está quase nua!")}
             if(this.pecas<=0){nudez+=1; console.log("O clima está esquentando! Você está completamente nua!")}
             if(nudez===2){alert("Casal, vocês passaram para o nível 2! Se preparem para cenas mais picantes!")};}
@@ -91,6 +94,9 @@ class Jogador{
         if(this.pecas>0){
             this.pecas-=1;
             this.roupas.pop();
+            alert(this.nome + ' Retire ' + this.roupas2[this.pecas]);
+            console.log(this.nome + ' retire ' + this.roupas2[this.pecas]);
+            homem.listarroupash;
             if(this.pecas===1){return console.log("O clima está esquentando! Você está quase nu!")}
             if(this.pecas<=0){nudez+=1; console.log("O clima está esquentando! Você está completamente nu!")};
             if(nudez===2){alert("Casal, vocês passaram para o nível 2! Se preparem para cenas mais picantes!")};}
