@@ -1,13 +1,13 @@
 //MÚSICAS
 
-const audio = new Audio('./assets/audio/Elton John, Dua Lipa - Cold Heart.mp3');
+const audio = new Audio('./assets/audio/menu.wav');
 
 audio.oncanplaythrough = function(){
     audio.play();
-    console.log('click')
+    
 }
 
-audio.loop = true;
+audio.loop = false;
 audio.onended = function(){
     audio.play();
 }

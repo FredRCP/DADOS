@@ -97,3 +97,7 @@ function play24(){
 function play25(){
     window.open('https://www.youtube.com/watch?v=UceaB4D0jpo&ab_channel=PostMaloneVEVO', '_target');
 }
+
+function play26(){
+    window.open('https://www.youtube.com/watch?v=qod03PVTLqk&ab_channel=EltonJohnVEVO', '_target');
+}
