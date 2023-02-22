@@ -4,7 +4,7 @@
 
         <div class="colunaesq">
             <p> 
-                <label title="Verdades e desafios" for="perguntas"><img src="/assets/img/verdade.png" alt="verdade e desafios">Verdades e Desafios</label>
+                <label title="Verdades e desafios" for="perguntas"><img class="perguntas" src="/assets/img/verdade.png" alt="verdade e desafios">Verdades e Desafios</label>
                 <input type="checkbox" name="perguntas" id="perguntas" checked>
             </p>
             <p>
@@ -13,7 +13,7 @@
                 <input type="checkbox" name="drink" id="drink">
             </p>
             <p>
-                <button title="Iniciar/reiniciar" onclick="resetar()"><img src="/assets/img/iniciar.png" alt=""></button>
+                <button class="cont" title="Iniciar/reiniciar" onclick="resetar()"><img src="/assets/img/iniciar.png" alt=""></button>
             </p>
             <p>
                 <button title="Avançar o jogo" onclick="apelar()"><img src="/assets/img/avancar.png" alt=""></button>
@@ -21,7 +21,7 @@
             <p>
                 <button title="Tocar música" onclick="audio.play()"><img src="/assets/img/musica1.png" alt=""></button>
             </p>
-            <p>
+            <p class="crono">
                 00:00:00
             </p>
         </div>
@@ -36,19 +36,19 @@
 
             <div class="jogo">
                 <div>
-                    <h6 class="armariom">LISTA MULHER</h6> 
+                    <h6 class="armariom"></h6> 
                 </div>
                 <div>
                     <button onclick="dadoela()">ELA</button>
                     <button onclick="dadoele()">ELE</button>
                 </div>
                 <div>
-                    <h6 class="armarioh">LISTA HOMEM</h6> 
+                    <h6 class="armarioh"></h6> 
                 </div>
             </div>
 
             <div class="resultadojogo">
-                ?
+                <h4>?</h4>
             </div>
         </div>
 

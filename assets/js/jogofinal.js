@@ -12,11 +12,16 @@ audio.onended = function(){
     audio.play();
 }
 
+function pausear(){
+    audio.pause();
+}
+
 //CRIAÇÃO DA CLASSE DOS JOGADORES
 
 let iniciar=0;
 let nudez=0;
 let transa=0;
+
 class Jogador{
     constructor(nome, pecas, roupas, lista, contador){
         this.nome= nome.toUpperCase();
@@ -53,7 +58,7 @@ class Jogador{
         let num= Math.floor(Math.random()*7);
         let missao= acaom2[num];
         transa+=1;
-        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return missao= " & " + homem.nome + "<br>" + "FIM DE JOGO! HORA DE TRANSAR!!!"};
+        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"};
         return missao;
     };
 
@@ -61,7 +66,7 @@ class Jogador{
         let num= Math.floor(Math.random()*7);
         let missao= acaoh2[num];
         transa+=1;
-        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return missao= " & " + mulher.nome + "<br>" + "FIM DE JOGO! HORA DE TRANSAR!!!"};
+        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"};
         return missao;
     };
 
@@ -80,9 +85,10 @@ class Jogador{
     get retirarpecam(){
         if(this.pecas>0){
             this.pecas-=1;
+            
+            alert(this.nome + ' retire ' + this.roupas[this.pecas]);
+            console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
-            alert(this.nome + ' retire ' + this.roupas1[this.pecas]);
-            console.log(this.nome + ' retire ' + this.roupas1[this.pecas]);
             mulher.listarroupasm;
             if(this.pecas===1){return console.log("O clima está esquentando! Você está quase nua!")}
             if(this.pecas<=0){nudez+=1; console.log("O clima está esquentando! Você está completamente nua!")}
@@ -93,9 +99,10 @@ class Jogador{
     get retirarpecah(){
         if(this.pecas>0){
             this.pecas-=1;
+            
+            alert(this.nome + ' retire ' + this.roupas[this.pecas]);
+            console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
-            alert(this.nome + ' Retire ' + this.roupas2[this.pecas]);
-            console.log(this.nome + ' retire ' + this.roupas2[this.pecas]);
             homem.listarroupash;
             if(this.pecas===1){return console.log("O clima está esquentando! Você está quase nu!")}
             if(this.pecas<=0){nudez+=1; console.log("O clima está esquentando! Você está completamente nu!")};
@@ -179,19 +186,19 @@ const perguntas=['descreva sua lingerie/roupa debaixo','qual a cor preferida de 
 
 function apelar(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
-    if(mulher.pecas>0){mulher.retirarpecam; mulher.listarroupasm}
+    if(mulher.pecas>0){mulher.retirarpecam; mulher.listarroupasm};
     if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;}
-    alert("Ambos tirem uma peça de roupa!")
 };
 
 function resetar(){
+    segundos=0;
     iniciar=1;
     nudez=0;
     transa=0;
     //CRIAÇÃO DOS JOGADORES
     jog1= prompt("Qual o nome da jogadora?") || "Jogadora 1";
     jog1p= Number(prompt("Quantas peças de roupa está usando? Não inclua os calçados."));
-    alert("A seguir, liste primeiro as peças íntimas.");
+    if(jog1p!==0){alert("A seguir, liste primeiro as peças íntimas.")};
     roupas1=[];
     for(i=0; i<jog1p; i++){
     roupas1[i]= prompt( 'Qual a peça número ' + (i+1) + '?');
@@ -202,7 +209,7 @@ function resetar(){
     jog2= prompt("Qual o nome do jogador?") || "Jogador 2";
     jog2p= Number(prompt("Quantas peças de roupa está usando? Não inclua os calçados."));
     roupas2=[];
-    alert("A seguir, liste primeiro as peças íntimas.");
+    if(jog2p!==0){alert("A seguir, liste primeiro as peças íntimas.")};
     for(i=0; i<jog2p; i++){
     roupas2[i]= prompt( 'Qual a peça número ' + (i+1) + '?');
     };
@@ -215,20 +222,61 @@ function resetar(){
     document.querySelector(".jogador2").innerHTML=homem.nome;
     mulher.listarroupasm;
     homem.listarroupash;
-    document.querySelector('.resultadojogo').innerHTML="";   
+    document.querySelector('.resultadojogo').innerHTML="?";
+    relogio();
+ 
 };
+
+//RELÓGIO
+
+function relogio(){
+    const relogio = document.querySelector('.crono');
+    let timer;
+    let segundos=0;
+    function criaHoraDosSegundos(segundos) {
+        const data = new Date(segundos * 1000);
+        return data.toLocaleTimeString('pt-BR', {
+        hour12: false,
+        timeZone: 'UTC'
+    });
+}
+
+function iniciaRelogio() {
+    timer = setInterval(function() {
+    segundos++;
+    relogio.innerHTML = criaHoraDosSegundos(segundos);
+    }, 1000);
+}
+
+iniciaRelogio();
+
+document.addEventListener('click', function(e) {
+    const el = e.target;
+
+    if (el.classList.contains('cont')) {
+      clearInterval(timer);
+      relogio.innerHTML = '00:00:00';
+     
+}})
+
+}
+
+ 
+
+//DADOS
 
 function dadoele(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
-    document.querySelector('.resultadojogo').innerHTML= homem.nome +"<br>" +homem.sortear1h;
-    
+    document.querySelector('.resultadojogo').innerHTML= homem.nome +"<br>" +homem.sortear1h; 
 };
 
 function dadoela(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
     document.querySelector('.resultadojogo').innerHTML=mulher.nome +"<br>"  +mulher.sortear1m;
-    
 };
+
+
+
 
 
 
