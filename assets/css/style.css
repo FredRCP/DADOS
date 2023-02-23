@@ -265,8 +265,9 @@ legend{
     justify-content: center; 
 }
 
-.colunadir h4{
+.colunadir h6{
     color: yellow;
+    font-size: 3rem;
 }
 
 .colunadir .jogo{

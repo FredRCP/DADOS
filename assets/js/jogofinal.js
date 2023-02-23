@@ -1,6 +1,6 @@
 //MÚSICAS
 
-const audio = new Audio('./assets/audio/menu.wav');
+const audio = new Audio('./assets/audio/men.wav');
 
 audio.oncanplaythrough = function(){
     audio.play();
@@ -190,7 +190,31 @@ function apelar(){
     if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;}
 };
 
+//RELÓGIO
+
+function criaHoraDosSegundos(segundos) {
+    const data = new Date(segundos * 1000);
+    return data.toLocaleTimeString('pt-BR', {
+    hour12: false,
+    timeZone: 'UTC'
+});}
+
+
+function iniciaRelogio() {
+const relogio = document.querySelector('.crono');
+segundos=0;
+timer = setInterval(function() {
+segundos++;
+console.log(segundos);
+relogio.innerHTML = criaHoraDosSegundos(segundos);
+}, 1000);
+}
+
+//INICIAR
+
 function resetar(){
+    let timer;
+    clearInterval(timer);
     segundos=0;
     iniciar=1;
     nudez=0;
@@ -223,43 +247,15 @@ function resetar(){
     mulher.listarroupasm;
     homem.listarroupash;
     document.querySelector('.resultadojogo').innerHTML="?";
-    relogio();
- 
+    
+    
+    iniciaRelogio();
+    setTimeout(()=>{alert("Casal já se passaram 10min, cliquem em avançar")}, 600000);
 };
 
-//RELÓGIO
 
-function relogio(){
-    const relogio = document.querySelector('.crono');
-    let timer;
-    let segundos=0;
-    function criaHoraDosSegundos(segundos) {
-        const data = new Date(segundos * 1000);
-        return data.toLocaleTimeString('pt-BR', {
-        hour12: false,
-        timeZone: 'UTC'
-    });
-}
 
-function iniciaRelogio() {
-    timer = setInterval(function() {
-    segundos++;
-    relogio.innerHTML = criaHoraDosSegundos(segundos);
-    }, 1000);
-}
 
-iniciaRelogio();
-
-document.addEventListener('click', function(e) {
-    const el = e.target;
-
-    if (el.classList.contains('cont')) {
-      clearInterval(timer);
-      relogio.innerHTML = '00:00:00';
-     
-}})
-
-}
 
  
 
