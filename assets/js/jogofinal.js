@@ -1,15 +1,13 @@
 //MÚSICAS
 
-const audio = new Audio('./assets/audio/men.wav');
+const audio = new Audio('./assets/audio/menu.wav');
+const audio1= new Audio("./assets/audio/Cold.mp3");
+const playlist=[audio, audio1];
 
-audio.oncanplaythrough = function(){
-    audio.play();
-    
-}
-
-audio.loop = false;
-audio.onended = function(){
-    audio.play();
+audio.loop = true;
+function play(){
+    playlist[0].play();
+    playlist[1].play();
 }
 
 function pausear(){
@@ -90,8 +88,8 @@ class Jogador{
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             mulher.listarroupasm;
-            if(this.pecas===1){return console.log("O clima está esquentando! Você está quase nua!")}
-            if(this.pecas<=0){nudez+=1; console.log("O clima está esquentando! Você está completamente nua!")}
+            if(this.pecas===1){return alert("O clima está esquentando! Você está quase nua!")}
+            if(this.pecas<=0){nudez+=1; alert("O clima está esquentando! Você está completamente nua!")}
             if(nudez===2){alert("Casal, vocês passaram para o nível 2! Se preparem para cenas mais picantes!")};}
         else{alert(this.nome +" você nao tem mais roupas!")}   
     };
@@ -104,8 +102,8 @@ class Jogador{
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             homem.listarroupash;
-            if(this.pecas===1){return console.log("O clima está esquentando! Você está quase nu!")}
-            if(this.pecas<=0){nudez+=1; console.log("O clima está esquentando! Você está completamente nu!")};
+            if(this.pecas===1){return alert("O clima está esquentando! Você está quase nu!")}
+            if(this.pecas<=0){nudez+=1; alert("O clima está esquentando! Você está completamente nu!")};
             if(nudez===2){alert("Casal, vocês passaram para o nível 2! Se preparem para cenas mais picantes!")};}
         else{alert(this.nome +" você nao tem mais roupas!")}
     };
@@ -199,13 +197,13 @@ function criaHoraDosSegundos(segundos) {
     timeZone: 'UTC'
 });}
 
-
+let timer;
 function iniciaRelogio() {
+clearInterval(timer);
 const relogio = document.querySelector('.crono');
 segundos=0;
 timer = setInterval(function() {
 segundos++;
-console.log(segundos);
 relogio.innerHTML = criaHoraDosSegundos(segundos);
 }, 1000);
 }
@@ -213,9 +211,6 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 
 function resetar(){
-    let timer;
-    clearInterval(timer);
-    segundos=0;
     iniciar=1;
     nudez=0;
     transa=0;
@@ -248,16 +243,10 @@ function resetar(){
     homem.listarroupash;
     document.querySelector('.resultadojogo').innerHTML="?";
     
-    
     iniciaRelogio();
     setTimeout(()=>{alert("Casal já se passaram 10min, cliquem em avançar")}, 600000);
 };
 
-
-
-
-
- 
 
 //DADOS
 
