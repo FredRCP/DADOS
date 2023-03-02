@@ -162,7 +162,7 @@ section .conteudor{
 .conteudo p{
     font-size: 3.5rem;
     text-align: justify;
-    color: white;
+    color: whitesmoke;
 }
 
 .conteudo1{
@@ -207,13 +207,13 @@ section .conteudor{
     flex-flow: column wrap;
     align-items: center;
     padding: 0;
-    margin-top: -15rem;
+    margin-top: -10rem;
     transition: all 500ms ease-in-out;  
     height: 50vh;
 }
 
 .colunaesq p{
-    color: wheat;
+    color: whitesmoke;
 }
 
 .colunaesq button{
@@ -253,6 +253,9 @@ section .conteudor{
 }
 
 .crono{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
     display: flex;
 }
 
@@ -271,7 +274,7 @@ section .conteudor{
 
 
 legend{
-    color: white;
+    color: whitesmoke;
 }
 
 
@@ -281,15 +284,16 @@ legend{
 }
 
 .jogo button{
-    color: whitesmoke;
+    color: yellow;
     border-radius: 2rem;
-    background-color: deeppink;
+    background-color: purple;
     padding: 1rem;
-    border: solid 0.2rem whitesmoke;
+    border: solid 0.2rem yellow;
     transition: all 500ms ease-in-out;
 }
 .jogo button:hover{
     background-color: blueviolet;
+    
 }
 
 .colunadir{
@@ -463,8 +467,27 @@ h2{
 }
 
 .versus img{
-    width: 20rem;
-    height: 10rem;
+    width: 30rem;
+    height: 20rem;
+    animation: giro 4s ease 0s infinite;
+
+}
+
+@keyframes giro {
+    0% {
+       
+        transform: scale(1);
+    }
+    
+    50% {
+      
+        transform: scale(1.05);
+    }
+
+    100%{
+      
+        transform: scale(1);
+    }
 }
 
 .verdade img{
