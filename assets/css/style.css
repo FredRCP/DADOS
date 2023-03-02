@@ -150,6 +150,7 @@ ul li a:hover::after{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-weight: 5400;
 }
 
 section .conteudor{
@@ -256,6 +257,10 @@ section .conteudor{
     position: fixed;
     bottom: 2rem;
     right: 2rem;
+    display: none;
+}
+
+.cronoligado{
     display: flex;
 }
 

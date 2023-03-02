@@ -201,6 +201,7 @@ let timer;
 function iniciaRelogio() {
 clearInterval(timer);
 const relogio = document.querySelector('.crono');
+relogio.classList.add('cronoligado');
 segundos=0;
 timer = setInterval(function() {
 segundos++;
@@ -211,6 +212,7 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 
 function resetar(){
+    document.querySelector('.crono').classList.remove('cronoligado');
     iniciar=1;
     nudez=0;
     transa=0;
