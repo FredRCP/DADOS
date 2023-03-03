@@ -106,12 +106,19 @@ ul li a:hover::after{
   
 
 .menuplay{
+    background-image: url('/assets/img/subsilver.jpg');
+    background-size: cover;
     position: fixed;
     width: 5rem;
     border-radius: 50%;
     height: 5rem;
-    bottom: 2rem;
+    bottom: 2.5rem;
     right: 2.5rem;
+}
+
+.ativo{
+    background-image: url('/assets/img/audiorosa.gif');
+    background-size: cover;
 }
 
 
@@ -345,7 +352,6 @@ legend{
 }
 
 .regra{
-    
     counter-reset: x;
 }
 
@@ -432,11 +438,16 @@ h2{
 
 .reg{
     justify-content: center;
+    text-align: justify;
     align-items: center;
     margin-left: 0;
-    margin-right: 50px; 
-    margin-bottom: 50px;
+    margin-top: 8rem;
+    margin-right: 5rem; 
+    margin-bottom: 5rem;
+}
 
+.reg h2{
+    margin-bottom: 5rem;
 }
 
 .regra{

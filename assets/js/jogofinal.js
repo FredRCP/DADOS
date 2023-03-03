@@ -1,18 +1,22 @@
 //MÚSICAS
 
 const audio = new Audio('./assets/audio/menu.wav');
-const audio1= new Audio("./assets/audio/Cold.mp3");
-const playlist=[audio, audio1];
 
 audio.loop = true;
-function play(){
-    playlist[0].play();
-    playlist[1].play();
-}
 
-function pausear(){
-    audio.pause();
-}
+const botao= document.querySelector('#bottom');
+
+addEventListener('click', function(){
+    
+    if(botao.classList.contains('menuplay')){
+        audio.play();
+        botao.classList.add('ativo');
+    } 
+})
+
+
+
+
 
 //CRIAÇÃO DA CLASSE DOS JOGADORES
 
@@ -197,14 +201,13 @@ function criaHoraDosSegundos(segundos) {
     timeZone: 'UTC'
 });}
 
-let timer;
+
 function iniciaRelogio() {
-clearInterval(timer);
 const relogio = document.querySelector('.crono');
-relogio.classList.add('cronoligado');
 segundos=0;
 timer = setInterval(function() {
 segundos++;
+console.log(segundos);
 relogio.innerHTML = criaHoraDosSegundos(segundos);
 }, 1000);
 }
@@ -212,7 +215,9 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 
 function resetar(){
-    document.querySelector('.crono').classList.remove('cronoligado');
+    let timer;
+    clearInterval(timer);
+    segundos=0;
     iniciar=1;
     nudez=0;
     transa=0;
@@ -245,10 +250,16 @@ function resetar(){
     homem.listarroupash;
     document.querySelector('.resultadojogo').innerHTML="?";
     
+    
     iniciaRelogio();
     setTimeout(()=>{alert("Casal já se passaram 10min, cliquem em avançar")}, 600000);
 };
 
+
+
+
+
+ 
 
 //DADOS
 
