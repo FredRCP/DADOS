@@ -28,6 +28,13 @@ body{
     transition:all 500ms ease-in-out;
 }
 
+.intro h1:hover{
+    background-image: url('/assets/img/fireblue.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+}
+
 aside{
     background-color: rgb(121, 23, 121);
     background-image: url("/assets/img/barra1.jpg");
@@ -55,7 +62,6 @@ aside h1{
     background-color: rgb(41, 11, 58);
 }
 
-
 ul{
     display: flex;
     list-style-type: none;
@@ -71,7 +77,6 @@ ul li a{
     transition: all 300ms ease-in-out;
 }
 
-
 ul li a::after{
     content: "";
     background-color: whitesmoke;
@@ -81,7 +86,7 @@ ul li a::after{
     width: 0%;
     left: 50%;
     bottom: 0;
-    }
+}
 
 ul li a:hover::after{
     background-color: whitesmoke;
@@ -90,7 +95,7 @@ ul li a:hover::after{
     content: "";
     width: 100%;
     left: 0%;
-   }
+}
 
 #barra{
     position: fixed;
@@ -100,11 +105,8 @@ ul li a:hover::after{
     color: blueviolet;
     border-radius: 3rem;
     background-color: blueviolet;
-   }
+}
    
-
-  
-
 .menuplay{
     background-image: url('/assets/img/subsilver.jpg');
     background-size: cover;
@@ -114,19 +116,11 @@ ul li a:hover::after{
     height: 5rem;
     bottom: 2.5rem;
     right: 2.5rem;
+    transition: all 500ms ease-in-out;
 }
 
-.ativo{
-    background-image: url('/assets/img/audiorosa.gif');
-    background-size: cover;
-}
-
-
-
-.menuplay:hover{
-    transition: all 800ms ease-in-out;
-    animation: pulse 2.5s ease 0s infinite;
-
+.menuplay:hover{ 
+    animation: pulse 1.8s ease 0s infinite;
 }
 
 @keyframes pulse {
@@ -145,6 +139,22 @@ ul li a:hover::after{
         transform: scale(1);
     }
   }
+
+.ativo{
+    background-image: url('/assets/img/audiorosa.gif');
+    background-size: cover;
+}
+
+.pause{
+    background-image: url('/assets/img/play.png');
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+    bottom: 2.5rem;
+    right: 2rem;
+    border-radius: 50%;
+    position: fixed;   
+}
 
 .conteudo{
     min-height: 100vh;
@@ -186,7 +196,6 @@ section .conteudor{
     background-repeat: no-repeat;
 }
 
-
 .jogofinal{
     display: grid;
     grid-template-columns: 200px 3fr 200px;
@@ -208,7 +217,6 @@ section .conteudor{
     padding: 0.1rem 0;
     display: block;
 }
-
 
 .colunaesq{
     display: flex;
@@ -234,13 +242,11 @@ section .conteudor{
     transform: scale(1.1);
 }
 
-
 .colunaesq button, .colunaesq label img{
     border-radius: 50%;
     background-color: rgb(41, 11, 58);
     
 }
-
 
 .colunaesq img{
     margin: 0 auto;
@@ -262,8 +268,8 @@ section .conteudor{
 
 .crono{
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 2.5rem;
+    left: 2rem;
     display: none;
 }
 
@@ -277,18 +283,14 @@ section .conteudor{
     padding: 3rem;
 }
 
-
 .home .b{
     display: flex;
-    justify-content: flex-end;
-    
+    justify-content: flex-end; 
 }
-
 
 legend{
     color: whitesmoke;
 }
-
 
 .seletores input{
     padding: 0.8rem;
@@ -304,8 +306,7 @@ legend{
     transition: all 500ms ease-in-out;
 }
 .jogo button:hover{
-    background-color: blueviolet;
-    
+    background-color: blueviolet;    
 }
 
 .colunadir{
@@ -344,15 +345,17 @@ legend{
     color: whitesmoke;
 }
 
-
 .colunadir .versus img{
     width: 80px;
-    height: 80px;
-    
+    height: 80px; 
 }
 
 .regra{
     counter-reset: x;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 h2{
@@ -384,8 +387,7 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    margin-left: -10rem;
-    
+    margin-left: -10rem;   
 }
 
 .play p{
@@ -422,7 +424,6 @@ h2{
     cursor: pointer;
 }
 
-
 .bot button{
     background-color: rgb(187, 51, 51);
     width: 10rem;
@@ -432,8 +433,7 @@ h2{
 
 .img1{
     background-color: #f3eaea;
-    padding: 8rem 2rem;
-    
+    padding: 8rem 2rem;   
 }
 
 .reg{
@@ -448,13 +448,6 @@ h2{
 
 .reg h2{
     margin-bottom: 5rem;
-}
-
-.regra{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    justify-content: center;
-    align-items: center;
 }
 
 .regra img{
@@ -478,15 +471,13 @@ h2{
     font-size: 5rem;
     font-weight:800;
     margin: 0 auto;
-    color: yellow;
-    
+    color: yellow;  
 }
 
 .versus img{
     width: 30rem;
     height: 20rem;
     animation: giro 4s ease 0s infinite;
-
 }
 
 @keyframes giro {
@@ -524,9 +515,7 @@ h2{
 footer{
     text-align: center;
     color: white;
-    background-color: rgb(12, 1, 19);
-   
-    
+    background-color: rgb(12, 1, 19);    
 }
 
 footer p{
@@ -540,9 +529,85 @@ footer p:hover{
     color: black;
 }
 
+@media (max-width: 1200px){
+
+
+    .conteudo p{
+        font-size: 3rem;
+    }
+
+    .menuplay{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    ul{
+        font-size: 2.8rem;
+    }
+
+    .regra{
+        grid-template-columns: 260px 1fr;
+        max-height: 90vh;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    .regra p{
+        font-size: 2rem;
+        padding: 0.2rem 0;
+    }
+
+    .regra p::before{
+        font-size: 3rem;
+    }
+
+    .img1{
+        padding: 2rem 0rem;   
+    }
+
+    .reg{
+        margin-left: 0;
+        margin-top: 6rem;
+        margin-right: 5rem; 
+        margin-bottom: 1rem;
+    }
+
+    .reg h2{
+        margin-bottom: 2rem;
+    }
+
+    .regra img{
+        height: 260px;
+        width: 260px;
+    }
+
+    .play{
+        margin-top: -5rem;
+        margin-left: -9rem;   
+    }
+
+    .play h1{
+        font-size: 3rem;
+    }
+    
+    .play p{
+        margin-top: 0rem;
+        font-size: 2rem;
+    }
+    .play ol{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.2rem 5rem;
+        margin-top: 2rem;
+        margin-left: 0rem;
+    }
+    
+    .play ol li{
+        font-size: 1.6rem;
+    }
 
 
 
-@media (max-width=800px){
 
 }

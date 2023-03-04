@@ -1,25 +1,35 @@
 //MÚSICAS
 
-const audio = new Audio('./assets/audio/menu.wav');
+const audio = new Audio('./assets/audio/menu.wav'); 
 
-audio.loop = true;
-
-const botao= document.querySelector('#bottom');
-
-addEventListener('click', function(){
-    
-    if(botao.classList.contains('menuplay')){
+addEventListener('click', e=>{
+    audio.loop = true;
+    const el= e.target;
+    if(ativar===false){
+    if(el.classList.contains('menuplay')){
         audio.play();
-        botao.classList.add('ativo');
-    } 
+        el.classList.add('ativo');
+        el.setAttribute('title', 'Desativar áudio');
+        ativar=true;
+    }}
+    else{
+    if(ativar=true){
+        audio.pause();
+        ativar=false;
+        el.classList.remove('ativo');
+        el.setAttribute('title', 'Ativar áudio')
+    }}    
 })
 
 
 
 
 
-//CRIAÇÃO DA CLASSE DOS JOGADORES
 
+
+//CRIAÇÃO DA CLASSE DOS JOGADORES
+let ativar=false;
+let timer;
 let iniciar=0;
 let nudez=0;
 let transa=0;
@@ -136,8 +146,6 @@ class Jogador{
 
 
 
-
-
 //DADOS FASE 1
 //34
 const corpom=["toque os lábios dela", "beije os lábios dela", "mordisque os lábios dela", "dê uma lambida no cantinho da boca dela", "dêem um beijão de cinema", "assopre os lábios dela", "massageie as orelhas dela", "dê mordidinhas nas orelhas dela", 
@@ -188,8 +196,8 @@ const perguntas=['descreva sua lingerie/roupa debaixo','qual a cor preferida de 
 
 function apelar(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
-    if(mulher.pecas>0){mulher.retirarpecam; mulher.listarroupasm};
-    if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;}
+    if(mulher.pecas>0){mulher.retirarpecam; mulher.listarroupasm;} else{alert(mulher.nome + ", você já está nua!")};
+    if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;} else{alert(homem.nome + ", você já está nu!")};
 };
 
 //RELÓGIO
@@ -204,10 +212,10 @@ function criaHoraDosSegundos(segundos) {
 
 function iniciaRelogio() {
 const relogio = document.querySelector('.crono');
+relogio.classList.add('cronoligado');
 segundos=0;
 timer = setInterval(function() {
 segundos++;
-console.log(segundos);
 relogio.innerHTML = criaHoraDosSegundos(segundos);
 }, 1000);
 }
@@ -215,7 +223,7 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 
 function resetar(){
-    let timer;
+    
     clearInterval(timer);
     segundos=0;
     iniciar=1;
@@ -252,7 +260,7 @@ function resetar(){
     
     
     iniciaRelogio();
-    setTimeout(()=>{alert("Casal já se passaram 10min, cliquem em avançar")}, 600000);
+    setTimeout(()=>{alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 600000);
 };
 
 
