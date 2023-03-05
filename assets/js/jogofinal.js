@@ -1,9 +1,14 @@
 //MÚSICAS
 
 const audio = new Audio('./assets/audio/menu.wav'); 
+const dice= new Audio('./assets/audio/dice.wav');
+const alarm= new Audio('./assets/audio/alarm.ogg');
+const yeah= new Audio('./assets/audio/ohyeah.wav');
+const yeah1= new Audio('./assets/audio/ohyeah1.wav');
 
+audio.loop = true;
 addEventListener('click', e=>{
-    audio.loop = true;
+    
     const el= e.target;
     if(ativar===false){
     if(el.classList.contains('menuplay')){
@@ -20,9 +25,6 @@ addEventListener('click', e=>{
         el.setAttribute('title', 'Ativar áudio')
     }}    
 })
-
-
-
 
 
 
@@ -97,7 +99,7 @@ class Jogador{
     get retirarpecam(){
         if(this.pecas>0){
             this.pecas-=1;
-            
+            yeah1.play();
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
@@ -111,7 +113,7 @@ class Jogador{
     get retirarpecah(){
         if(this.pecas>0){
             this.pecas-=1;
-            
+            yeah.play();
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
@@ -257,10 +259,8 @@ function resetar(){
     mulher.listarroupasm;
     homem.listarroupash;
     document.querySelector('.resultadojogo').innerHTML="?";
-    
-    
     iniciaRelogio();
-    setTimeout(()=>{alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 600000);
+    setTimeout(()=>{alarm.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 600000);
 };
 
 
@@ -273,11 +273,13 @@ function resetar(){
 
 function dadoele(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
+    dice.play();
     document.querySelector('.resultadojogo').innerHTML= homem.nome +"<br>" +homem.sortear1h; 
 };
 
 function dadoela(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
+    dice.play();
     document.querySelector('.resultadojogo').innerHTML=mulher.nome +"<br>"  +mulher.sortear1m;
 };
 
