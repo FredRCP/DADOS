@@ -233,6 +233,7 @@ section .conteudor{
 }
 
 .abri{
+    width: auto;
     font-weight: 500;
     font-size: 2rem;
     padding: 0.3rem;
@@ -566,8 +567,33 @@ footer p:hover{
     color: black;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1366px){
 
+    .abri{
+        width: auto;
+        font-size: 1.2rem;
+        padding: 0 0.3rem;
+        border-radius: 0.5rem;
+    }
+
+    .abri:hover{
+        background-color: transparent;
+    }
+
+    .colunaesq1{
+        height: 40vh;
+        margin-top: -16rem;
+    }
+
+    .colunaesq1 #abri{
+        margin-bottom: 0rem;
+    }
+    
+    .colunaesq{
+        padding: 0; 
+        height: 35vh;
+        margin-top: 0rem;
+    }
 
     .conteudo p{
         font-size: 3rem;
@@ -660,7 +686,7 @@ footer p:hover{
     }
 
     .crono{
-        left: 5.5rem;
+        left: 8rem;
     }
     
     .jogofinal img, .jogofinal label{
