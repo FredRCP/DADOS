@@ -206,7 +206,7 @@ section .conteudor{
 }
 
 .jogofinal p{
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     text-align: justify;
     color: white;
 }
@@ -218,14 +218,50 @@ section .conteudor{
     display: block;
 }
 
-.colunaesq{
+.colunaesq1{
+    color: whitesmoke;
     display: flex;
+    flex-direction: column;
+    height: 40vh;
+    align-items: center;
+    margin-top: -22rem;
+    gap: 0;
+}
+
+.colunaesq1>input{
+    display: none;
+}
+
+.abri{
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    transition: all 400ms ease-in-out;
+}
+
+.abri:hover{
+    background-color: blueviolet;
+    color: yellow;
+}
+
+.colunaesq1 #abri{
+    margin-bottom: 0rem;
+}
+
+.colunaesq{
+    display: none;
     flex-flow: column wrap;
     align-items: center;
+    justify-content: center;
     padding: 0;
-    margin-top: -10rem;
     transition: all 500ms ease-in-out;  
     height: 50vh;
+    margin-top: -1rem;
+}
+
+.abri:checked~#abrir{
+    display: flex;
 }
 
 .colunaesq p{
@@ -245,7 +281,7 @@ section .conteudor{
 .colunaesq button, .colunaesq label img{
     border-radius: 50%;
     background-color: rgb(41, 11, 58);
-    
+    transition: all 500ms ease-in-out;  
 }
 
 .colunaesq img{
@@ -259,17 +295,18 @@ section .conteudor{
 
 .colunaesq .perguntas{
     transition: all 2000ms ease-in-out;
+    
 }
 
-.colunaesq .perguntas:hover{
-    
+.colunaesq .perguntas:hover{   
     transform: scale(1.1) rotate(1080deg);
 }
 
 .crono{
+    color: whitesmoke;
     position: fixed;
     bottom: 2.5rem;
-    left: 2rem;
+    left: 10rem;
     display: none;
 }
 
@@ -614,50 +651,92 @@ footer p:hover{
     
     .jogofinal{
         grid-template-columns: 180px 3fr 180px;
-        width: 80vw;
+        width: 100vw;
         max-height: 90vh;
     }
     
     .jogofinal p{
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+    }
+
+    .crono{
+        left: 5.5rem;
     }
     
-    .jogofinal img{
-        width: 30px;
-        height: 30px;
-        padding: 0.1rem 0;
+    .jogofinal img, .jogofinal label{
+        width: 25px;
+        height: 25px;
+        padding: 0;
     }
     
     .colunaesq{
-        padding: 0;
-        margin-top: -5rem;
+        padding: 0rem;
+        margin-top: 0rem;
         height: 40vh;
     }  
-    
-    .crono{
-        bottom: 2.5rem;
-        left: 2rem;
-    }
+
+  
 
     .versus{
         font-size: 4rem;
         font-weight:800;
-        margin: 0 auto;
     }
     
     .versus img{
         width: 30rem;
-        height: 20rem;
+        height: 30rem;
     }
 
     .verdade img{
         width: 1rem;
         height: 1rem;
     }
-    
-   
-    
 
+    .seletores input{
+        padding: 0.5rem;
+        margin-top: 0rem;
+    }
+
+    .jogo button{
+        padding: 1rem;
+        border: solid 0.2rem yellow;
+        transition: all 500ms ease-in-out;
+    }
+    
+    .colunadir{
+        height: 75vh;
+        margin-top: -5rem;
+    }
+
+    .colunadir h3{
+        font-size: 3.5rem;
+    }
+
+    .colunadir h6{
+        font-size: 2.8rem;
+    }
+
+    .colunadir .jogo{
+        font-size: 3rem;
+        padding: 5rem;
+    }
+
+    .colunadir .jogo button{
+        font-size: 2rem;
+        width: 6rem;
+        height: 6rem;
+        margin: 2rem;
+    }
+
+    .resultadojogo{
+        font-size: 5rem;
+        color: whitesmoke;
+    }
+
+    .colunadir .versus img{
+        width: 70px;
+        height: 70px; 
+    }
 
 
 }

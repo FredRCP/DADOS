@@ -5,6 +5,8 @@ const dice= new Audio('./assets/audio/dice.wav');
 const alarm= new Audio('./assets/audio/alarm.ogg');
 const yeah= new Audio('./assets/audio/ohyeah.wav');
 const yeah1= new Audio('./assets/audio/ohyeah1.wav');
+const drink= new Audio('./assets/audio/agua.wav')
+const fim= new Audio('./assets/audio/win.wav');
 
 audio.loop = true;
 addEventListener('click', e=>{
@@ -72,7 +74,7 @@ class Jogador{
         let num= Math.floor(Math.random()*7);
         let missao= acaom2[num];
         transa+=1;
-        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"};
+        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return  final();};
         return missao;
     };
 
@@ -80,7 +82,7 @@ class Jogador{
         let num= Math.floor(Math.random()*7);
         let missao= acaoh2[num];
         transa+=1;
-        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"};
+        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return final(); };
         return missao;
     };
 
@@ -89,7 +91,7 @@ class Jogador{
             let numero= Math.floor(Math.random()*40);
             if(this.lista.indexOf(perguntas[numero])===-1){
             this.lista.push(perguntas[numero]);
-            console.log(perguntas[numero]);} else(alert("pergunte o que quiser ao seu parceiro(a)"));
+            alert(perguntas[numero]);} else(alert("pergunte o que quiser ao seu parceiro(a)"));
     }}
 
     get listar(){
@@ -126,6 +128,7 @@ class Jogador{
 
     get beber(){
         if(document.querySelector('#drink').checked===true){
+        drink.play();
         alert('tome um gole do seu drink');
     }}
 
@@ -146,7 +149,11 @@ class Jogador{
     }
 }
 
+ function final(){
+    fim.play();
+    document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"; 
 
+ }
 
 //DADOS FASE 1
 //34
@@ -177,7 +184,7 @@ const acaom2=["masturbe seu parceiro (se tiver um EGG, use-o!)", "faça sexo ora
 "façam um 69", "sente sobre o quadril e esfregue sua buceta no pau dele (sem penetrar)", "se masturbe para ele (se tiver algum brinquedinho, você pode usá-lo)"];
 //7
 const acaoh2=["masturbe sua parceira (se tiver algum brinquedinho,você pode usá-lo)", "faça sexo oral nela", "deem um amasso gostoso", "façam um 69",
-"acaricie e chupe os seios dela", "esfregue a cabecinha no grilinho dela (sem penetrar)", "se masturbe para ela"];
+"acaricie e chupe os seios dela", "esfregue a cabecinha no clitóris dela (sem penetrar)", "se masturbe para ela"];
 
 //PERGUNTAS
 //40
@@ -187,7 +194,7 @@ const perguntas=['descreva sua lingerie/roupa debaixo','qual a cor preferida de 
 'já transou no primeiro encontro?','é importante o tamanho do pênis/seios do(a) parceiro(a)?','já foi em um strip club?',
 'como fica qdo está muito bêbado(a)? (inconveniente? deprimido(a)? eufórico(a)? tarado(a)?)','com que idade foi sua primeira transa?',
 'ja deu PT após beber? conte!','lugar favorito para transar?','já saiu com alguém famoso?','transar de manhã, à tarde ou à noite?',
-'já ficou nu/nua em público?','tem vontade de ir em uma praia de nudismo?','o que compraria em um sex shop?',
+'já ficou nu/nua em público?','tem vontade de ir em uma praia de nudismo? Conte!','o que compraria em um sex shop?',
 'faria amor em público/ar livre?','já trocou nudes?','assiste pornografia? vejam um vídeo juntos agora!',
 'o que melhoraria em seu parceiro/parceira?','qual parte do corpo preferida no sexo oposto?',
 'sexo no escuro ou luz acesa?','o que seu parceiro(a) faz que mais te dá tesão?','o que você faz melhor na cama?',

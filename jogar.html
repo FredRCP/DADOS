@@ -1,26 +1,28 @@
 <section class="sec conteudo1">
    
     <div class="jogofinal">
-
-        <div class="colunaesq">
-            <p> 
-                <label title="Verdades e desafios" for="perguntas"><img class="perguntas" src="/assets/img/verdade.png" alt="verdade e desafios">Verdades/Desafios</label>
-                <input type="checkbox" name="perguntas" id="perguntas" checked>
-            </p>
-            <p>
+        
+        <div class="colunaesq1">
+            <label title="Abrir menu" class="abri" for="abri">MENU</label>
+            <input title="menu" class="abri" type="checkbox" name="" id="abri">
+            <div class="colunaesq" id="abrir">
+                <p> 
+                    <label title="Ativar verdades e desafios" for="perguntas"><img class="perguntas" src="/assets/img/verdade.png" alt="Ativar verdade e desafios">Verdades/Desafios</label>
+                    <input type="checkbox" name="perguntas" id="perguntas">
+                </p>
+                <p>
+                    
+                    <label title="Ativar drinks" for="drink"><img src="/assets/img/drink.jpg" alt="Ativar drink">Drinks</label>
+                    <input type="checkbox" name="drink" id="drink">
+                </p>
+                <p>
+                    <button class="cont" title="Iniciar/reiniciar" onclick="resetar()"><img src="/assets/img/iniciar.png" alt=""></button>
+                </p>
+                <p>
+                    <button title="Avançar o jogo" onclick="apelar()"><img src="/assets/img/avancar.png" alt=""></button>
+                </p>
                 
-                <label title="Drinks" for="drink"><img src="/assets/img/drink.jpg" alt="drink">Drinks</label>
-                <input type="checkbox" name="drink" id="drink">
-            </p>
-            <p>
-                <button class="cont" title="Iniciar/reiniciar" onclick="resetar()"><img src="/assets/img/iniciar.png" alt=""></button>
-            </p>
-            <p>
-                <button title="Avançar o jogo" onclick="apelar()"><img src="/assets/img/avancar.png" alt=""></button>
-            </p>
-            <p class="crono">
-                00:00:00
-            </p>
+            </div>
         </div>
 
         <div class="colunadir">
@@ -33,7 +35,7 @@
 
             <div class="jogo">
                 <div>
-                    <h6 class="armariom"></h6> 
+                    <h6 type="checkbox" class="armariom"></h6> 
                 </div>
                 <div>
                     <button onclick="dadoela()">ELA</button>
@@ -50,5 +52,8 @@
         </div>
 
     </div>
+    <p class="crono">
+        00:00:00
+    </p>
 
 </section>
