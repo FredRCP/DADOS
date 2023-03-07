@@ -397,6 +397,16 @@ legend{
     align-items: center;
 }
 
+.regra img{
+    border-radius: 50%;
+    background-image: url('/assets/img/flamefire.gif');
+    background-size: cover;
+}
+
+.regra img:hover{
+  
+}
+
 h2{
     font-size: 3.5rem;
     color:rgb(41, 11, 58);
