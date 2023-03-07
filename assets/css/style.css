@@ -399,6 +399,7 @@ legend{
 
 .regra img{
     border-radius: 50%;
+    background-color: black;
     background-image: url('/assets/img/flamefire.gif');
     background-size: cover;
 }
