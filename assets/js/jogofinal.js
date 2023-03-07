@@ -7,6 +7,8 @@ const yeah= new Audio('./assets/audio/ohyeah.wav');
 const yeah1= new Audio('./assets/audio/ohyeah1.wav');
 const drink= new Audio('./assets/audio/agua.wav')
 const fim= new Audio('./assets/audio/win.wav');
+const mul= new Audio('./assets/audio/mul.wav');
+const hom= new Audio('./assets/audio/hom.wav');
 
 audio.loop = true;
 addEventListener('click', e=>{
@@ -103,6 +105,7 @@ class Jogador{
             this.pecas-=1;
             yeah1.play();
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
+            mul.play();
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             mulher.listarroupasm;
@@ -117,6 +120,7 @@ class Jogador{
             this.pecas-=1;
             yeah.play();
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
+            hom.play();
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             homem.listarroupash;
