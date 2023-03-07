@@ -233,16 +233,17 @@ section .conteudor{
 }
 
 .abri{
+    background-color: rgba(128, 0, 128, 0.651);
     width: auto;
     font-weight: 500;
     font-size: 2rem;
-    padding: 0.3rem;
+    padding: 0.4rem;
     border-radius: 0.5rem;
     transition: all 400ms ease-in-out;
 }
 
 .abri:hover{
-    background-color: blueviolet;
+    background-color: rgba(137, 43, 226, 0.568);
     color: yellow;
 }
 
@@ -570,6 +571,7 @@ footer p:hover{
 @media (max-width: 1366px){
 
     .abri{
+        background-color: transparent;
         width: auto;
         font-size: 1.2rem;
         padding: 0 0.3rem;
