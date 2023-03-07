@@ -155,8 +155,7 @@ class Jogador{
 
  function final(){
     fim.play();
-    document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"; 
-
+    return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"; 
  }
 
 //DADOS FASE 1
