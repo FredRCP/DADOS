@@ -232,6 +232,10 @@ section .conteudor{
     display: none;
 }
 
+.colunaesq1>label{
+    width: auto;
+}
+
 .abri{
     background-color: rgba(128, 0, 128, 0.651);
     width: auto;
@@ -358,7 +362,27 @@ legend{
     margin-top: -10rem;
 }
 
+.jogo #rh, .jogo #rm{
+    display: none;
+}
+
+#rm:checked~.s{
+    display: none;
+}
+
+#rh:checked~.s{
+    display: none;
+}
+
 .colunadir h6{
+    color: yellow;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colunadir h5{
     color: yellow;
     font-size: 3rem;
 }
@@ -371,7 +395,9 @@ legend{
     flex-flow: row wrap;
     padding: 5rem;
     color: yellow;
+    position: relative;
 }
+
 .colunadir .jogo button{
     font-size: 3rem;
     width: 8rem;
@@ -401,6 +427,8 @@ legend{
     border-radius: 50%;
     background-image: url('/assets/img/flamefire.gif');
     background-size: cover;
+    height: 200px;
+    width: 200px;
 }
 
 
@@ -450,7 +478,6 @@ h2{
     gap: 1rem 5rem;
     margin-top: 3rem;
     margin-left: 5rem;
-
 }
 
 .play ol li{
@@ -459,8 +486,7 @@ h2{
     font-weight: 600;
     justify-content: center;
     align-items: center;
-    text-shadow: 2px;
-    
+    text-shadow: 2px; 
 }
 
 .play ol li a{
@@ -479,7 +505,7 @@ h2{
 
 .img1{
     background-color: #f3eaea;
-    padding: 8rem 2rem;   
+    padding: 5rem 1rem;   
 }
 
 .reg{
@@ -494,12 +520,6 @@ h2{
 
 .reg h2{
     margin-bottom: 5rem;
-}
-
-.regra img{
-    left: 0;
-    height: 300px;
-    width: 300px;
 }
 
 .img2{
@@ -583,6 +603,7 @@ footer p:hover{
         font-size: 1.2rem;
         padding: 0 0.3rem;
         border-radius: 0.5rem;
+        position: relative;
     }
 
     .abri:hover{
@@ -596,6 +617,10 @@ footer p:hover{
 
     .colunaesq1 #abri{
         margin-bottom: 0rem;
+    }
+
+    .colunaesq1 .abri{
+        margin-left: -1rem;
     }
     
     .colunaesq{
@@ -710,8 +735,6 @@ footer p:hover{
         height: 40vh;
     }  
 
-  
-
     .versus{
         font-size: 4rem;
         font-weight:800;
@@ -747,8 +770,12 @@ footer p:hover{
         font-size: 3.5rem;
     }
 
-    .colunadir h6{
-        font-size: 2.8rem;
+    .colunadir h6, .colunadir h5{
+        font-size: 2.6rem;
+    }
+
+    .colunadir h6.s{
+        font-size: 1.5rem;
     }
 
     .colunadir .jogo{
@@ -772,6 +799,5 @@ footer p:hover{
         width: 70px;
         height: 70px; 
     }
-
 
 }

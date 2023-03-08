@@ -9,6 +9,8 @@ const drink= new Audio('./assets/audio/agua.wav')
 const fim= new Audio('./assets/audio/win.wav');
 const mul= new Audio('./assets/audio/mul.wav');
 const hom= new Audio('./assets/audio/hom.wav');
+const stripman= new Audio('./assets/audio/stripman.mp3');
+const stripmulher= new Audio('./assets/audio/stripmulher.mp3');
 
 audio.loop = true;
 addEventListener('click', e=>{
@@ -29,9 +31,6 @@ addEventListener('click', e=>{
         el.setAttribute('title', 'Ativar áudio')
     }}    
 })
-
-
-
 
 //CRIAÇÃO DA CLASSE DOS JOGADORES
 let ativar=false;
@@ -103,9 +102,8 @@ class Jogador{
     get retirarpecam(){
         if(this.pecas>0){
             this.pecas-=1;
-            yeah1.play();
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
-            mul.play();
+            stripmulher.play();
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             mulher.listarroupasm;
@@ -118,9 +116,8 @@ class Jogador{
     get retirarpecah(){
         if(this.pecas>0){
             this.pecas-=1;
-            yeah.play();
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
-            hom.play();
+            stripman.play();
             console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             homem.listarroupash;
@@ -141,6 +138,7 @@ class Jogador{
         for(let i in this.roupas){
             armariom+="peça "+ (Number(i)+1) + ": " + this.roupas[i] + "<br>";
         }
+        if(armariom===""){ return document.querySelector(".armariom").innerHTML="NUA"}
         document.querySelector(".armariom").innerHTML= armariom;
     }
 
@@ -149,12 +147,19 @@ class Jogador{
         for(let i in this.roupas){
             armarioh+="peça "+ (Number(i)+1) + ": " + this.roupas[i] + "<br>";
         }
+        if(armarioh===""){ return document.querySelector(".armarioh").innerHTML="NU"}
         document.querySelector(".armarioh").innerHTML= armarioh;
     }
 }
 
  function final(){
-    fim.play();
+    yeah1.play();
+    setTimeout(() => {
+        yeah.play();
+    }, 1200);
+    setTimeout(() => {
+        fim.play();
+    }, 2500);
     return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!"; 
  }
 
@@ -209,8 +214,10 @@ const perguntas=['descreva sua lingerie/roupa debaixo','qual a cor preferida de 
 function apelar(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
     if(mulher.pecas>0){mulher.retirarpecam; mulher.listarroupasm;} else{alert(mulher.nome + ", você já está nua!")};
-    if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;} else{alert(homem.nome + ", você já está nu!")};
-};
+    setTimeout(() => {
+        if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;} else{alert(homem.nome + ", você já está nu!")};    
+    }, 10000);
+    };
 
 //RELÓGIO
 
@@ -270,7 +277,7 @@ function resetar(){
     homem.listarroupash;
     document.querySelector('.resultadojogo').innerHTML="?";
     iniciaRelogio();
-    setTimeout(()=>{alarm.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 600000);
+    setTimeout(()=>{fim.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 720000);
 };
 
 
