@@ -2,7 +2,6 @@
 
 const audio = new Audio('./assets/audio/menu.wav'); 
 const dice= new Audio('./assets/audio/dice.wav');
-const alarm= new Audio('./assets/audio/alarm.ogg');
 const yeah= new Audio('./assets/audio/ohyeah.wav');
 const yeah1= new Audio('./assets/audio/ohyeah1.wav');
 const drink= new Audio('./assets/audio/agua.wav')
@@ -72,6 +71,8 @@ class Jogador{
     };
 
     get sortear2m(){
+        const botaodadom= document.querySelector('.levelm');
+        botaodadom.classList.add('level2');
         let num= Math.floor(Math.random()*7);
         let missao= acaom2[num];
         transa+=1;
@@ -80,6 +81,8 @@ class Jogador{
     };
 
     get sortear2h(){
+        const botaodadoh= document.querySelector('.levelh');
+        botaodadoh.classList.add('level2');
         let num= Math.floor(Math.random()*7);
         let missao= acaoh2[num];
         transa+=1;
@@ -276,6 +279,10 @@ function resetar(){
     document.querySelector('.resultadojogo').innerHTML="💜";
     iniciaRelogio();
     setTimeout(()=>{fim.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 720000);
+    const botaodadoh=document.querySelector('.levelh');
+    const botaodadom=document.querySelector('.levelm');
+    botaodadom.classList.remove('level2');
+    botaodadoh.classList.remove('level2');
 };
 
 
