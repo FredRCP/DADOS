@@ -104,7 +104,6 @@ class Jogador{
             this.pecas-=1;
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
             stripmulher.play();
-            console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             mulher.listarroupasm;
             if(this.pecas===1){return alert("O clima está esquentando! Você está quase nua!")}
@@ -118,7 +117,6 @@ class Jogador{
             this.pecas-=1;
             alert(this.nome + ' retire ' + this.roupas[this.pecas]);
             stripman.play();
-            console.log(this.nome + ' retire ' + this.roupas[this.pecas]);
             this.roupas.pop();
             homem.listarroupash;
             if(this.pecas===1){return alert("O clima está esquentando! Você está quase nu!")}
@@ -138,8 +136,8 @@ class Jogador{
         for(let i in this.roupas){
             armariom+="peça "+ (Number(i)+1) + ": " + this.roupas[i] + "<br>";
         }
-        if(armariom===""){ return document.querySelector(".armariom").innerHTML="NUA"}
-        document.querySelector(".armariom").innerHTML= armariom;
+        //if(armariom===""){ return document.querySelector(".armariom").innerHTML="NUA"}
+        //document.querySelector(".armariom").innerHTML= armariom;
     }
 
     get listarroupash(){
@@ -147,8 +145,8 @@ class Jogador{
         for(let i in this.roupas){
             armarioh+="peça "+ (Number(i)+1) + ": " + this.roupas[i] + "<br>";
         }
-        if(armarioh===""){ return document.querySelector(".armarioh").innerHTML="NU"}
-        document.querySelector(".armarioh").innerHTML= armarioh;
+        //if(armarioh===""){ return document.querySelector(".armarioh").innerHTML="NU"}
+        //document.querySelector(".armarioh").innerHTML= armarioh;
     }
 }
 
@@ -216,7 +214,7 @@ function apelar(){
     if(mulher.pecas>0){mulher.retirarpecam; mulher.listarroupasm;} else{alert(mulher.nome + ", você já está nua!")};
     setTimeout(() => {
         if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;} else{alert(homem.nome + ", você já está nu!")};    
-    }, 10000);
+    }, 8000);
     };
 
 //RELÓGIO
@@ -275,16 +273,11 @@ function resetar(){
     document.querySelector(".jogador2").innerHTML=homem.nome;
     mulher.listarroupasm;
     homem.listarroupash;
-    document.querySelector('.resultadojogo').innerHTML="?";
+    document.querySelector('.resultadojogo').innerHTML="💜";
     iniciaRelogio();
     setTimeout(()=>{fim.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 720000);
 };
 
-
-
-
-
- 
 
 //DADOS
 
