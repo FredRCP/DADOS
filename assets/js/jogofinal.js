@@ -15,6 +15,8 @@ yeah.volume=0.7;
 yeah1.volume=0.7;
 mul.volume=0.5;
 hom.volume=0.5;
+stripman.volume=0.5;
+stripmulher.volume=0.5;
 
 audio.loop = true;
 addEventListener('click', e=>{
