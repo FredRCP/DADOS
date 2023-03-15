@@ -11,6 +11,8 @@ const hom= new Audio('./assets/audio/hom.wav');
 const stripman= new Audio('./assets/audio/stripman.mp3');
 const stripmulher= new Audio('./assets/audio/stripmulher.mp3');
 const aero= new Audio('./assets/audio/aero.mp3');
+const click= new Audio('./assets/audio/click.ogg');
+const message= new Audio('./assets/audio/message.ogg');
 audio.volume=0.6;
 yeah.volume=1;
 yeah1.volume=1;
@@ -36,8 +38,10 @@ addEventListener('click', e=>{
         ativar=false;
         el.classList.remove('ativo');
         el.setAttribute('title', 'Ativar áudio')
-    }}    
-})
+    }}
+    if(el.classList.contains('click')){
+        click.play();}    
+    })
 
 //CRIAÇÃO DA CLASSE DOS JOGADORES
 let ativar=false;
@@ -289,13 +293,12 @@ function resetar(){
     document.querySelector('.resultadojogo').innerHTML="";
     document.querySelector('.resultadojogo').appendChild(imagem);
     iniciaRelogio();
-    setTimeout(()=>{fim.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 720000);
+    setTimeout(()=>{message.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 720000);
     const botaodadoh=document.querySelector('.levelh');
     const botaodadom=document.querySelector('.levelm');
     botaodadom.classList.remove('level2');
     botaodadoh.classList.remove('level2');
 };
-
 
 //DADOS
 
