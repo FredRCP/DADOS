@@ -10,9 +10,10 @@ const mul= new Audio('./assets/audio/mul.wav');
 const hom= new Audio('./assets/audio/hom.wav');
 const stripman= new Audio('./assets/audio/stripman.mp3');
 const stripmulher= new Audio('./assets/audio/stripmulher.mp3');
+const aero= new Audio('./assets/audio/aero.mp3');
 audio.volume=0.6;
-yeah.volume=0.7;
-yeah1.volume=0.7;
+yeah.volume=1;
+yeah1.volume=1;
 mul.volume=0.5;
 hom.volume=0.5;
 stripman.volume=0.5;
@@ -30,7 +31,7 @@ addEventListener('click', e=>{
         ativar=true;
     }}
     else{
-    if(ativar=true){
+    if(ativar=true&&el.classList.contains('menuplay')){
         audio.pause();
         ativar=false;
         el.classList.remove('ativo');
@@ -250,7 +251,7 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 
 function resetar(){
-    
+    aero.play();
     clearInterval(timer);
     segundos=0;
     iniciar=1;

@@ -117,6 +117,7 @@ ul li a:hover::after{
     bottom: 2.5rem;
     right: 2.5rem;
     transition: all 500ms ease-in-out;
+    cursor: pointer;
 }
 
 .menuplay:hover{ 
@@ -260,6 +261,7 @@ section .conteudor{
     padding: 0.4rem;
     border-radius: 0.5rem;
     transition: all 400ms ease-in-out;
+    cursor: pointer;
 }
 
 .abri:hover{
@@ -293,6 +295,7 @@ section .conteudor{
 .colunaesq button{
     border: 0.2rem solid blueviolet;
     transition: all 500ms ease-in-out;
+    cursor: pointer;
 }
 
 .colunaesq button:hover{
@@ -309,6 +312,7 @@ section .conteudor{
 .colunaesq img{
     margin: 0 auto;
     transition: all 500ms ease-in-out;
+    cursor: pointer;
 }
 
 .colunaesq img:hover{
@@ -363,6 +367,7 @@ legend{
     padding: 1rem;
     border: solid 0.2rem yellow;
     transition: all 500ms ease-in-out;
+    cursor: pointer;
 }
 .jogo button:hover{
     background-color: blueviolet;   
@@ -418,6 +423,8 @@ legend{
 .colunadir h5 img{
     height: 8rem;
     width: 8rem;
+    background-color: transparent;
+    border-radius: 50%;
 }
 
 .colunadir .jogo{
