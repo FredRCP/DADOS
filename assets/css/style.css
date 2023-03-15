@@ -410,6 +410,14 @@ legend{
 .colunadir h5{
     color: yellow;
     font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colunadir h5 img{
+    height: 8rem;
+    width: 8rem;
 }
 
 .colunadir .jogo{
@@ -807,6 +815,10 @@ footer p:hover{
     .colunadir .jogo{
         font-size: 3rem;
         padding: 5rem;
+    }
+
+    .colunadir h5 img{
+        margin-top: -1rem;
     }
 
     .colunadir .jogo button{

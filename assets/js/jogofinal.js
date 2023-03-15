@@ -283,7 +283,10 @@ function resetar(){
     document.querySelector(".jogador2").innerHTML=homem.nome;
     mulher.listarroupasm;
     homem.listarroupash;
-    document.querySelector('.resultadojogo').innerHTML="💜";
+    const imagem= document.createElement('img');
+    imagem.setAttribute('src','/assets/img/roxinho.png');
+    document.querySelector('.resultadojogo').innerHTML="";
+    document.querySelector('.resultadojogo').appendChild(imagem);
     iniciaRelogio();
     setTimeout(()=>{fim.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 720000);
     const botaodadoh=document.querySelector('.levelh');
