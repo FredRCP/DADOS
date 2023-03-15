@@ -10,6 +10,11 @@ const mul= new Audio('./assets/audio/mul.wav');
 const hom= new Audio('./assets/audio/hom.wav');
 const stripman= new Audio('./assets/audio/stripman.mp3');
 const stripmulher= new Audio('./assets/audio/stripmulher.mp3');
+audio.volume=0.6;
+yeah.volume=0.7;
+yeah1.volume=0.7;
+mul.volume=0.5;
+hom.volume=0.5;
 
 audio.loop = true;
 addEventListener('click', e=>{
@@ -217,7 +222,7 @@ function apelar(){
     if(mulher.pecas>0){mulher.retirarpecam; mulher.listarroupasm;} else{alert(mulher.nome + ", você já está nua!")};
     setTimeout(() => {
         if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;} else{alert(homem.nome + ", você já está nu!")};    
-    }, 8000);
+    }, 6000);
     };
 
 //RELÓGIO
