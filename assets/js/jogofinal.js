@@ -41,8 +41,8 @@ addEventListener('click', e=>{
         el.setAttribute('title', 'Ativar áudio')
     }}
     if(el.classList.contains('click')){
-        click.play();}
-     if(el.classList.contains('clickmenu')){
+        click.play();}    
+    if(el.classList.contains('clickmenu')){
         clickmenu.play();} 
     })
 
