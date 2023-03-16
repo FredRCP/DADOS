@@ -13,6 +13,7 @@ const stripmulher= new Audio('./assets/audio/stripmulher.mp3');
 const aero= new Audio('./assets/audio/aero.mp3');
 const click= new Audio('./assets/audio/click.wav');
 const message= new Audio('./assets/audio/message.ogg');
+const clickmenu= new Audio('./assets/audio/clickmenu.mp3');
 audio.volume=0.6;
 yeah.volume=1;
 yeah1.volume=1;
@@ -40,7 +41,9 @@ addEventListener('click', e=>{
         el.setAttribute('title', 'Ativar áudio')
     }}
     if(el.classList.contains('click')){
-        click.play();}    
+        click.play();}
+     if(el.classList.contains('clickmenu')){
+        clickmenu.play();} 
     })
 
 //CRIAÇÃO DA CLASSE DOS JOGADORES
