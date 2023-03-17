@@ -177,14 +177,15 @@ ul li a:hover::after{
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 10rem;
-    padding: 5rem;
+    margin-top: 3rem;
+    padding: 10rem;
 }
 
-.conteudo img{
-    display: flex;
-    height: 100rem;
-    width: 100rem;
+.conteudo .dadoroxo{
+    position: fixed;
+    width: 20rem;
+    height: 20rem;
+    bottom: 5rem;
 }
 
 
