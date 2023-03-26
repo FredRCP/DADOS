@@ -292,7 +292,7 @@ function resetar(){
     mulher.listarroupasm;
     homem.listarroupash;
     const imagem= document.createElement('img');
-    imagem.setAttribute('src','/assets/img/roxinho.png');
+    imagem.setAttribute('src','/assets/img/roxinhofogosem.png');
     document.querySelector('.resultadojogo').innerHTML="";
     document.querySelector('.resultadojogo').appendChild(imagem);
     iniciaRelogio();
