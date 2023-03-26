@@ -547,7 +547,7 @@ h2{
 }
 
 .img1{
-    background-color: #f3eaea;
+    background-color: whitesmoke;
     padding: 5rem 1rem;   
 }
 
@@ -641,7 +641,21 @@ footer p:hover{
 @media (max-width: 1366px){
 
     .home{
-        margin-top: 5rem;
+        margin-top: 0rem;
+    }
+
+    .dadoroxo{
+        margin-top: 1rem;
+    }
+
+    .conteudo{
+        max-height: 100vh;
+    }
+
+    .conteudo .dadoroxo{
+        width: 8rem;
+        height: 8rem;
+        bottom: 0rem;
     }
 
     .abri{
