@@ -60,14 +60,14 @@ let demora=0;
 
 
 class Jogador{
-    constructor(nome, pecas, roupas, lista, contador, acoesjafeitas){
+    constructor(nome, pecas, roupas, lista, contador, listaacoes){
         this.nome= nome.toUpperCase();
         this.pecas= pecas;
         if(this.pecas===0){nudez+=1};
         this.roupas= roupas;
         this.lista=lista;
         this.contador=contador;
-        this.acoesjafeitas=acoesjafeitas;
+        this.listaacoes=listaacoes;
     }
 
     get sortear1m(){
@@ -75,10 +75,13 @@ class Jogador{
         else{
             let num1= Math.floor(Math.random()*34);
             this.contador+=1;
-            if(this.contador%2===0){this.perguntar};
             if(this.contador%6===0){this.beber};
+            if(this.contador%2===0){this.perguntar};
             if(num1===33&&this.pecas>0){let missao= corpoh[num1]; this.retirarpecam; return missao} 
-            else{let missao= corpoh[num1]; return missao};
+            else{
+                //if(this.acoesjafeitas.indexOf(corpoh[num1])===-1){
+                //this.acoesjafeitas.push(corpoh[num1]);} 
+                let missao= corpoh[num1]; return missao};
         }
     };
 
@@ -87,10 +90,14 @@ class Jogador{
         else{
             let num1= Math.floor(Math.random()*34);
             this.contador+=1;
-            if(this.contador%2===0){this.perguntar};
             if(this.contador%6===0){this.beber};
+            if(this.contador%2===0){this.perguntar};
             if(num1===33&&this.pecas>0){let missao= corpom[num1]; this.retirarpecah; return missao} 
-            else{let missao= corpom[num1]; return missao};}
+            else{
+                //if(this.listaacoes.indexOf(corpom[num1])===-1){
+                //this.listaacoes.push(corpom[num1]);} 
+                let missao= corpom[num1]; return missao};
+        }
     };
 
     get sortear2m(){
@@ -290,6 +297,7 @@ function resetar(){
     roupas1[i]= prompt( 'Qual a peça número ' + (i+1) + '?');
     };
     lista1=[];
+    listaacoes1=[];
     bebida1=0;
     contador1=0;
     jog2= prompt("Qual o nome do jogador?") || "Jogador 2";
@@ -300,10 +308,11 @@ function resetar(){
     roupas2[i]= prompt( 'Qual a peça número ' + (i+1) + '?');
     };
     lista2=[];
+    listaacoes2=[];
     bebida2=0;
     contador2=0;
-    mulher= new Jogador(jog1, jog1p, roupas1, lista1, bebida1, contador1);
-    homem= new Jogador(jog2, jog2p, roupas2, lista2, bebida2, contador2);
+    mulher= new Jogador(jog1, jog1p, roupas1, lista1, bebida1, contador1, listaacoes1);
+    homem= new Jogador(jog2, jog2p, roupas2, lista2, bebida2, contador2, listaacoes2);
     document.querySelector(".jogador1").innerHTML=mulher.nome;
     document.querySelector(".jogador2").innerHTML=homem.nome;
     mulher.listarroupasm;
@@ -365,15 +374,15 @@ function criarimagem(){
 }
 
 function mudarfoto(){
-    const n= Math.floor(Math.random()*63);
+    const n= Math.floor(Math.random()*60);
     const imagem= document.querySelector('.imagemfinal');
     imagem.src='/assets/img/kama/'+imagens[n];
 }
 
 
-const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg', 'bailarina.png', 'bicicleta.jpeg', 'bombadeandromeda.jpeg', 'cachorro.jpeg', 'cadeiraquente.jpeg', 'caminhoparaoceu.jpeg', 'cao.jpeg','caraacara.jpeg', 'carangueijo.jpeg',
-'carrinhodemaodeitada.jpeg', 'carrinhodemaoempe.jpeg', 'carrinhodemaosentado.jpeg', 'cascata.jpeg','conchinha.jpeg', 'conchinhacaraacara.jpeg', 'cowgirl.jpeg', 'davidcopperfield.jpeg', 'estante.jpeg', 'exercicionabarra.jpeg', 
-'fecharonegocio.jpeg', 'fusao.jpeg', 'h2o.jpeg', 'jovenzinha.jpeg', 'lateralterna.jpeg','libelula.jpeg', 'manteiga.jpeg', 'mariposa.jpeg', 'missionario.jpeg', 'missionarioviciado.jpeg', 'mountainclimber.jpeg', 'notopo.jpeg', 'ochef.jpeg', 'odragao.jpeg', 
+const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg', 'bailarina.png', 'bicicleta.jpeg', 'bombadeandromeda.jpeg', 'cachorro.jpeg', 'cadeiraquente.jpeg', 'caminhoparaoceu.jpeg', 'cao.jpeg','caraacara.jpeg',
+'carrinhodemaodeitada.jpeg', 'carrinhodemaoempe.jpeg', 'carrinhodemaosentado.jpeg', 'cascata.jpeg','conchinha.jpeg', 'conchinhacaraacara.jpeg', 'cowgirl.jpeg', 'estante.jpeg', 'exercicionabarra.jpeg',
+'fusao.jpeg', 'h2o.jpeg', 'jovenzinha.jpeg', 'lateralterna.jpeg','libelula.jpeg', 'manteiga.jpeg', 'mariposa.jpeg', 'missionario.jpeg', 'missionarioviciado.jpeg', 'mountainclimber.jpeg', 'notopo.jpeg', 'ochef.jpeg', 'odragao.jpeg', 
 'oelevador.jpeg', 'oestandarte.jpeg', 'oG.jpeg', 'ogato.jpeg', 'oplugue.jpeg', 'opreguicoso.jpeg', 'otrono.jpeg', 'oX.jpeg', 'pequenacolher.jpeg', 'posicaodovarao.jpeg', 'presenteembrulhado.jpeg', 'pretzel.jpeg', 'servicodequarto.jpeg', 'solucaorapida.jpeg', 
 'spork.jpeg', 'surfista.jpeg', 'torpedosuico.jpeg','umasubida.jpeg', 'uniaodelotus.jpeg', 'vaqueirainvertida.jpeg','kamaporcimabunda.gif', 'kamacavalgando.gif', 'kamade4puxando.gif', 'kamade4.gif',
 'kamaelaoral.gif', 'kamaelecomduas.gif', 'kamaporcima.gif'];
