@@ -374,15 +374,15 @@ function criarimagem(){
 }
 
 function mudarfoto(){
-    const n= Math.floor(Math.random()*60);
+    const n= Math.floor(Math.random()*63);
     const imagem= document.querySelector('.imagemfinal');
     imagem.src='/assets/img/kama/'+imagens[n];
 }
 
 
-const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg', 'bailarina.png', 'bicicleta.jpeg', 'bombadeandromeda.jpeg', 'cachorro.jpeg', 'cadeiraquente.jpeg', 'caminhoparaoceu.jpeg', 'cao.jpeg','caraacara.jpeg',
-'carrinhodemaodeitada.jpeg', 'carrinhodemaoempe.jpeg', 'carrinhodemaosentado.jpeg', 'cascata.jpeg','conchinha.jpeg', 'conchinhacaraacara.jpeg', 'cowgirl.jpeg', 'estante.jpeg', 'exercicionabarra.jpeg',
-'fusao.jpeg', 'h2o.jpeg', 'jovenzinha.jpeg', 'lateralterna.jpeg','libelula.jpeg', 'manteiga.jpeg', 'mariposa.jpeg', 'missionario.jpeg', 'missionarioviciado.jpeg', 'mountainclimber.jpeg', 'notopo.jpeg', 'ochef.jpeg', 'odragao.jpeg', 
+const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg', 'bailarina.png', 'bicicleta.jpeg', 'bombadeandromeda.jpeg', 'cachorro.jpeg', 'cadeiraquente.jpeg', 'caminhoparaoceu.jpeg', 'cao.jpeg','caraacara.jpeg', 'carangueijo.jpeg',
+'carrinhodemaodeitada.jpeg', 'carrinhodemaoempe.jpeg', 'carrinhodemaosentado.jpeg', 'cascata.jpeg','conchinha.jpeg', 'conchinhacaraacara.jpeg', 'cowgirl.jpeg', 'davidcopperfield.jpeg', 'estante.jpeg', 'exercicionabarra.jpeg', 
+'fecharonegocio.jpeg', 'fusao.jpeg', 'h2o.jpeg', 'jovenzinha.jpeg', 'lateralterna.jpeg','libelula.jpeg', 'manteiga.jpeg', 'mariposa.jpeg', 'missionario.jpeg', 'missionarioviciado.jpeg', 'mountainclimber.jpeg', 'notopo.jpeg', 'ochef.jpeg', 'odragao.jpeg', 
 'oelevador.jpeg', 'oestandarte.jpeg', 'oG.jpeg', 'ogato.jpeg', 'oplugue.jpeg', 'opreguicoso.jpeg', 'otrono.jpeg', 'oX.jpeg', 'pequenacolher.jpeg', 'posicaodovarao.jpeg', 'presenteembrulhado.jpeg', 'pretzel.jpeg', 'servicodequarto.jpeg', 'solucaorapida.jpeg', 
 'spork.jpeg', 'surfista.jpeg', 'torpedosuico.jpeg','umasubida.jpeg', 'uniaodelotus.jpeg', 'vaqueirainvertida.jpeg','kamaporcimabunda.gif', 'kamacavalgando.gif', 'kamade4puxando.gif', 'kamade4.gif',
 'kamaelaoral.gif', 'kamaelecomduas.gif', 'kamaporcima.gif'];
