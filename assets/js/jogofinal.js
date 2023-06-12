@@ -55,17 +55,19 @@ let timer;
 let iniciar=0;
 let nudez=0;
 let transa=0;
+let demora=0;
 
 
 
 class Jogador{
-    constructor(nome, pecas, roupas, lista, contador){
+    constructor(nome, pecas, roupas, lista, contador, acoesjafeitas){
         this.nome= nome.toUpperCase();
         this.pecas= pecas;
         if(this.pecas===0){nudez+=1};
         this.roupas= roupas;
         this.lista=lista;
         this.contador=contador;
+        this.acoesjafeitas=acoesjafeitas;
     }
 
     get sortear1m(){
@@ -73,10 +75,11 @@ class Jogador{
         else{
             let num1= Math.floor(Math.random()*34);
             this.contador+=1;
-            if(this.contador%3===0){this.perguntar};
+            if(this.contador%2===0){this.perguntar};
             if(this.contador%6===0){this.beber};
             if(num1===33&&this.pecas>0){let missao= corpoh[num1]; this.retirarpecam; return missao} 
-            else{let missao= corpoh[num1]; return missao};}
+            else{let missao= corpoh[num1]; return missao};
+        }
     };
 
     get sortear1h(){
@@ -84,7 +87,7 @@ class Jogador{
         else{
             let num1= Math.floor(Math.random()*34);
             this.contador+=1;
-            if(this.contador%3===0){this.perguntar};
+            if(this.contador%2===0){this.perguntar};
             if(this.contador%6===0){this.beber};
             if(num1===33&&this.pecas>0){let missao= corpom[num1]; this.retirarpecah; return missao} 
             else{let missao= corpom[num1]; return missao};}
@@ -189,48 +192,48 @@ class Jogador{
 const corpom=["toque os lábios dela", "beije os lábios dela", "mordisque os lábios dela", "dê uma lambida no cantinho da boca dela", "dêem um beijão de cinema", "assopre os lábios dela", "massageie as orelhas dela", "dê mordidinhas nas orelhas dela", 
 "assopre as orelhas dela", "dê lambidas nas orelhas dela", "massageie a nuca dela", "arranhe levemente a nuca dela", "dê vários beijos na nuca dela", "assopre e mordisque a nuca dela", "beije o pescoço dela", 
 "dê lambidas e leves chupadas no pescoço dela", "acaricie os seios dela", "apalpe os seios dela", "massageia as costas dela", 
-"se ela estiver de roupas íntimas ou nua: beije, dê lambidas e assopre suas costas, em toda a sua extensão; senão role o dado novamente", "beije todo o abdome dela", " deslize as mãos, suavemente, por todo o abdome dela", "dê mordidinhas no abdome dela",
-"massageie as coxas dela", "deslize as mãos pela parte interna das coxas dela, arranhando levemente dos joelhos pra cima", "beije a parte interna das coxas dela; inicie próximo aos joelhos e suba até a virilha",
-"se ela estiver apenas com roupa íntima ou nua, dê lambidinhas na virilha; senão role o dado novamente", "apalpe e massageie a bunda dela", "se ela estiver apenas com roupa íntima ou nua, dê mordidinhas na bunda dela; senão role o dado novamente",
-"a escolha é livre, faça o quiser com ela!", "se ela estiver apenas com roupas debaixo ou nua, toque as partes íntimas; senão role o dado novamente",
-"se ela estiver apenas com roupas debaixo ou nua, toque e acaricie as partes íntimas; senão role o dado novamente",
-"se ela estiver apenas com roupas debaixo, dê vários beijos nas partes íntimas (por cima da roupa); senão role o dado novamente", "retire uma peça de roupa!"];
+"se ela estiver de roupas íntimas ou nua: beije, dê lambidas e assopre suas costas, em toda a sua extensão; senão, role o dado novamente", "beije todo o abdome dela", " deslize as mãos, suavemente, por todo o abdome dela", "dê mordidinhas no abdome dela",
+"massageie as coxas dela", "deslize as mãos pela parte interna das coxas dela, arranhando levemente dos joelhos em direção à virilha", "beije a parte interna das coxas dela; inicie próximo aos joelhos e suba até a virilha",
+"se ela estiver apenas com roupa íntima ou nua, dê lambidinhas na virilha; senão, role o dado novamente", "apalpe e massageie a bunda dela", "se ela estiver apenas com roupa íntima ou nua, dê mordidinhas na bunda dela; senão, role o dado novamente",
+"a escolha é livre, faça o quiser com ela!", "se ela estiver apenas com roupas debaixo ou nua, toque as partes íntimas; senão, role o dado novamente",
+"se ela estiver apenas com roupas debaixo ou nua, toque e acaricie as partes íntimas; senão, role o dado novamente",
+"se ela estiver apenas com roupas debaixo, dê vários beijos nas partes íntimas (por cima da roupa); senão, role o dado novamente", "retire uma peça de roupa!"];
 //34
 const corpoh=["toque os lábios dele", "beije os lábios dele", "mordisque os lábios dele", "dê uma lambida no cantinho da boca dele", "dêem um beijão de cinema", "assopre os lábios dele", "massageie as orelhas dele", "dê mordidinhas nas orelhas dele", 
 "assopre as orelhas dele", "dê lambidas nas orelhas dele", "massageie a nuca dele", "arranhe levemente a nuca dele", "dê vários beijos na nuca dele", "assopre e mordisque a nuca dele", "dê beijos no pescoço dele", 
 "dê lambidas e leves chupadas no pescoço dele", "acaricie o peito dele", "apalpe o peito dele", "massageia as costas dele", 
-"se ele estiver de roupas íntimas ou nu: beije, dê lambidas e assopre as costas, em toda a sua extensão; senão role o dado novamente", "beije todo o abdome dele", " deslize as mãos, suavemente, por todo o abdome dele", "dê mordidinhas no abdome dele",
-"massageie as coxas dele", "deslize as mãos pela parte interna das coxas dele, arranhando levemente subindo e descendo várias vezes", "beije a parte interna das coxas dele; inicie próximo aos joelhos e suba até a virilha",
-"se ele estiver apenas com roupa íntima ou nu, dê lambidinhas na virilha dele; senão role o dado novamente", "apalpe e massageie a bunda dele", "se ele estiver apenas com roupa íntima ou nu, dê mordidinhas na bunda dele; senão role o dado novamente",
-"a escolha é livre, faça o quiser com ele!", "se ele estiver apenas com roupas debaixo ou nu, toque as partes íntimas; senão role o dado novamente",
-"se ele estiver apenas com roupas debaixo ou nu, toque e acaricie, apalpe as partes íntimas; senão role o dado novamente",
-"se ele estiver apenas com roupas debaixo, dê vários beijos nas partes íntimas (por cima da roupa), senão role o dado novamente", "retire uma peça de roupa!"];
+"se ele estiver de roupas íntimas ou nu: beije, dê lambidas e assopre as costas, em toda a sua extensão; senão, role o dado novamente", "beije todo o abdome dele", " deslize as mãos, suavemente, por todo o abdome dele", "dê mordidinhas no abdome dele",
+"massageie as coxas dele", "deslize as mãos pela parte interna das coxas dele, arranhando levemente subindo e descendo continuamente", "beije a parte interna das coxas dele; inicie próximo aos joelhos e suba até a virilha",
+"se ele estiver apenas com roupa íntima ou nu, dê lambidinhas na virilha dele; senão, role o dado novamente", "apalpe e massageie a bunda dele", "se ele estiver apenas com roupa íntima ou nu, dê mordidinhas na bunda dele; senão, role o dado novamente",
+"a escolha é livre, faça o quiser com ele!", "se ele estiver apenas com roupas debaixo ou nu, toque as partes íntimas; senão, role o dado novamente",
+"se ele estiver apenas com roupas debaixo ou nu, toque e acaricie, apalpe as partes íntimas; senão, role o dado novamente",
+"se ele estiver apenas com roupas debaixo, dê vários beijos nas partes íntimas (por cima da roupa), senão, role o dado novamente", "retire uma peça de roupa!"];
 
 
 //DADOS FASE 2
 //7
-const acaom2=["masturbe seu parceiro (se tiver um EGG, use-o!)", "faça sexo oral nele", "deem um amasso gostoso", "esfregue sua buceta na cara dele",
-"façam um 69", "sente sobre o quadril e esfregue sua buceta no pau dele (sem penetrar)", "se masturbe para ele (se tiver algum brinquedinho, você pode usá-lo)"];
+const acaom2=["masturbe seu parceiro (se tiver um EGG, use-o!)", "faça sexo oral nele", "deem um amasso bem gostoso", "esfregue sua buceta na cara dele",
+"façam um 69", "sente sobre ele e esfregue sua buceta no pau dele (sem penetrar)", "se masturbe para ele (se tiver algum brinquedinho, você pode usá-lo)"];
 //7
-const acaoh2=["masturbe sua parceira (se tiver algum brinquedinho,você pode usá-lo)", "faça sexo oral nela", "deem um amasso gostoso", "façam um 69",
+const acaoh2=["masturbe sua parceira (se tiver algum brinquedinho, você pode usá-lo)", "faça sexo oral nela", "deem um amasso bem gostoso", "façam um 69",
 "acaricie e chupe os seios dela", "esfregue a cabecinha no clitóris dela (sem penetrar)", "se masturbe para ela"];
 
 //PERGUNTAS
 //40
-const perguntas=['descreva sua lingerie/roupa debaixo','qual a cor preferida de lingerie/roupa debaixo?','posição preferida?','sexo romântico ou selvagem?',
+const perguntas=['descreva sua lingerie/roupa íntima','qual a cor preferida de lingerie/roupa íntima?','qual sua posição preferida?','sexo romântico ou selvagem?',
 'conte uma fantasia sexual','parte do corpo que mais gosta no parceiro?','o que ele/ela faz que te deixa com mais tesão?',
-'já fez alguma loucura? conte!','qual parte do seu corpo você mudaria?','já transou em lugares exóticos? se sim, quais?',
+'já fez alguma loucura sexual? conte!','qual parte do seu corpo você mudaria?','já transou em lugares exóticos? se sim, quais?',
 'já transou no primeiro encontro?','é importante o tamanho do pênis/seios do(a) parceiro(a)?','já foi em um strip club?',
 'como fica qdo está muito bêbado(a)? (inconveniente? deprimido(a)? eufórico(a)? tarado(a)?)','com que idade foi sua primeira transa?',
 'ja deu PT após beber? conte!','lugar favorito para transar?','já saiu com alguém famoso?','transar de manhã, à tarde ou à noite?',
 'já ficou nu/nua em público?','tem vontade de ir em uma praia de nudismo? Conte!','o que compraria em um sex shop?',
-'faria amor em público/ar livre?','já trocou nudes?','assiste pornografia? vejam um vídeo juntos agora!',
+'faria amor em público/ar livre?','já trocou nudes?','Gosta de pornografia? vejam um vídeo juntos agora!',
 'o que melhoraria em seu parceiro/parceira?','qual parte do corpo preferida no sexo oposto?',
 'sexo no escuro ou luz acesa?','o que seu parceiro(a) faz que mais te dá tesão?','o que você faz melhor na cama?',
-'penetração rápida e profunda, ou lenta e carinhosa?','com que idade viu pela primeira vez um(a) pepeka/pau?',
-'quando foi seu primeiro bjo?','dominar ou ser dominado(a)?','o que mais gosta no seu corpo?',
-'gostar de falar sacanagem? palavrões? xingar?','qual sua fantasia/fetiche mais safado?','gosta de apanhar no sexo?',
- 'sussurre uma sacanagem no ouvido do seu parceiro(a)'];
+'penetração rápida e profunda, ou lenta e carinhosa?','com que idade viu pela primeira vez, ao vivo, um(a) pepeka/pau?',
+'quando, e onde, foi seu primeiro beijo?','dominar ou ser dominado(a)?','o que mais gosta no seu corpo?',
+'gostar de falar sacanagem? palavrões? xingar?','qual sua fantasia/fetiche mais safado? Descreva como seria!','gosta de apanhar no sexo?',
+ 'sussurre uma sacanagem no ouvido do seu parceiro(a)', 'seu parceiro pode fazer uma pergunta íntima'];
 
 function apelar(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
@@ -310,7 +313,7 @@ function resetar(){
     document.querySelector('.resultadojogo').innerHTML="";
     document.querySelector('.resultadojogo').appendChild(imagem);
     iniciaRelogio();
-    setTimeout(()=>{message.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 720000);
+    setTimeout(()=>{message.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 1200000);
     const botaodadoh=document.querySelector('.levelh');
     const botaodadom=document.querySelector('.levelm');
     botaodadom.classList.remove('level2');
@@ -342,7 +345,7 @@ function transar(){
         criarimagem();
     }    
     else{alert('Divirtam-se! Obrigado por participarem do jogo.'); ligou=false;}
-    
+    iniciar=0;
     return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!";  
 }
 
@@ -373,7 +376,7 @@ const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg'
 'fecharonegocio.jpeg', 'fusao.jpeg', 'h2o.jpeg', 'jovenzinha.jpeg', 'lateralterna.jpeg','libelula.jpeg', 'manteiga.jpeg', 'mariposa.jpeg', 'missionario.jpeg', 'missionarioviciado.jpeg', 'mountainclimber.jpeg', 'notopo.jpeg', 'ochef.jpeg', 'odragao.jpeg', 
 'oelevador.jpeg', 'oestandarte.jpeg', 'oG.jpeg', 'ogato.jpeg', 'oplugue.jpeg', 'opreguicoso.jpeg', 'otrono.jpeg', 'oX.jpeg', 'pequenacolher.jpeg', 'posicaodovarao.jpeg', 'presenteembrulhado.jpeg', 'pretzel.jpeg', 'servicodequarto.jpeg', 'solucaorapida.jpeg', 
 'spork.jpeg', 'surfista.jpeg', 'torpedosuico.jpeg','umasubida.jpeg', 'uniaodelotus.jpeg', 'vaqueirainvertida.jpeg','kamaporcimabunda.gif', 'kamacavalgando.gif', 'kamade4puxando.gif', 'kamade4.gif',
-'kamaelaoral.gif', 'kamaelecomduas.gif', 'kamaporcima'];
+'kamaelaoral.gif', 'kamaelecomduas.gif', 'kamaporcima.gif'];
 
 
 
