@@ -361,7 +361,7 @@ function transar(){
 function criarimagem(){
     const n= Math.floor(Math.random()*63);
     const imagem=document.createElement('img');
-    imagem.src= '/assets/img/kama/'+imagens[n]+'.jpeg';
+    imagem.src= '/assets/img/kama/'+imagens[n];
     imagem.setAttribute('title', 'clica na imagem para selecionar outra posição');
     //const botaok= document.createElement('button');
     //botaok.classList.add('botaozim');
