@@ -81,7 +81,8 @@ class Jogador{
             else{
                 //if(this.acoesjafeitas.indexOf(corpoh[num1])===-1){
                 //this.acoesjafeitas.push(corpoh[num1]);} 
-                let missao= corpoh[num1]; return missao};
+                let missao= corpoh[num1];
+                return missao};
         }
     };
 
@@ -288,6 +289,7 @@ function resetar(){
     iniciar=1;
     nudez=0;
     transa=0;
+    document.querySelector('#abri').checked=false;
     //CRIAÇÃO DOS JOGADORES
     jog1= prompt("Qual o nome da jogadora?") || "Jogadora 1";
     jog1p= Number(prompt("Quantas peças de roupa está usando? Não inclua os calçados."));
@@ -362,7 +364,7 @@ function criarimagem(){
     const n= Math.floor(Math.random()*63);
     const imagem=document.createElement('img');
     imagem.src= '/assets/img/kama/'+imagens[n];
-    imagem.setAttribute('title', 'clica na imagem para selecionar outra posição');
+    imagem.setAttribute('title', 'clica na imagem para mostrar outra posição');
     //const botaok= document.createElement('button');
     //botaok.classList.add('botaozim');
     //botaok.setAttribute('title', 'outra posição');
@@ -374,18 +376,26 @@ function criarimagem(){
 }
 
 function mudarfoto(){
-    const n= Math.floor(Math.random()*63);
+    const n= Math.floor(Math.random()*91);
     const imagem= document.querySelector('.imagemfinal');
     imagem.src='/assets/img/kama/'+imagens[n];
 }
 
 
-const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg', 'bailarina.png', 'bicicleta.jpeg', 'bombadeandromeda.jpeg', 'cachorro.jpeg', 'cadeiraquente.jpeg', 'caminhoparaoceu.jpeg', 'cao.jpeg','caraacara.jpeg', 'carangueijo.jpeg',
-'carrinhodemaodeitada.jpeg', 'carrinhodemaoempe.jpeg', 'carrinhodemaosentado.jpeg', 'cascata.jpeg','conchinha.jpeg', 'conchinhacaraacara.jpeg', 'cowgirl.jpeg', 'davidcopperfield.jpeg', 'estante.jpeg', 'exercicionabarra.jpeg', 
-'fecharonegocio.jpeg', 'fusao.jpeg', 'h2o.jpeg', 'jovenzinha.jpeg', 'lateralterna.jpeg','libelula.jpeg', 'manteiga.jpeg', 'mariposa.jpeg', 'missionario.jpeg', 'missionarioviciado.jpeg', 'mountainclimber.jpeg', 'notopo.jpeg', 'ochef.jpeg', 'odragao.jpeg', 
-'oelevador.jpeg', 'oestandarte.jpeg', 'oG.jpeg', 'ogato.jpeg', 'oplugue.jpeg', 'opreguicoso.jpeg', 'otrono.jpeg', 'oX.jpeg', 'pequenacolher.jpeg', 'posicaodovarao.jpeg', 'presenteembrulhado.jpeg', 'pretzel.jpeg', 'servicodequarto.jpeg', 'solucaorapida.jpeg', 
-'spork.jpeg', 'surfista.jpeg', 'torpedosuico.jpeg','umasubida.jpeg', 'uniaodelotus.jpeg', 'vaqueirainvertida.jpeg','kamaporcimabunda.gif', 'kamacavalgando.gif', 'kamade4puxando.gif', 'kamade4.gif',
-'kamaelaoral.gif', 'kamaelecomduas.gif', 'kamaporcima.gif'];
+const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg', 'bicicleta.jpeg', 'bombadeandromeda.jpeg', 
+'cachorro.jpeg', 'cadeiraquente.jpeg', 'caminhoparaoceu.jpeg', 'cao.jpeg','caraacara.jpeg','carrinhodemaodeitada.jpeg', 
+'carrinhodemaoempe.jpeg', 'carrinhodemaosentado.jpeg', 'cascata.jpeg','conchinha.jpeg', 'conchinhacaraacara.jpeg', 
+'cowgirl.jpeg', 'estante.jpeg', 'exercicionabarra.jpeg', 'fusao.jpeg', 'h2o.jpeg', 'jovenzinha.jpeg', 'lateralterna.jpeg',
+'libelula.jpeg', 'manteiga.jpeg', 'mariposa.jpeg', 'missionario.jpeg', 'missionarioviciado.jpeg', 'mountainclimber.jpeg',
+'notopo.jpeg', 'ochef.jpeg', 'odragao.jpeg', 'oelevador.jpeg', 'oestandarte.jpeg', 'oG.jpeg', 'ogato.jpeg', 'oplugue.jpeg', 
+'opreguicoso.jpeg', 'otrono.jpeg', 'oX.jpeg', 'pequenacolher.jpeg', 'posicaodovarao.jpeg', 'presenteembrulhado.jpeg', 
+'pretzel.jpeg', 'servicodequarto.jpeg', 'solucaorapida.jpeg', 'spork.jpeg', 'surfista.jpeg', 'torpedosuico.jpeg',
+'umasubida.jpeg', 'uniaodelotus.jpeg', 'vaqueirainvertida.jpeg','kamaporcimabunda.gif', 'kamacavalgando.gif', 
+'kamade4puxando.gif', 'kamade4.gif', 'kamaelaoral.gif', 'kamaelecomduas.gif', 'kamaporcima.gif', '69.gif', 'aberta.gif', 
+'anal.gif', 'apoiadanaparece.gif', 'chupandobatendo.gif', 'de4.gif', 'delado.gif', 'deladoatras.gif', 'deladobaixo.gif', 
+'oralnela.gif', 'oralnela1.gif', 'porcimabjo.gif', 'porcimadecosta.gif', 'punheta.gif', 'punheta1.gif', 'vouyer.gif', 
+'beiracama.gif', 'bumbum.gif', 'de4supinado.gif','escancarada.gif', 'escancarada1.gif', 'flecha.gif', 'lavar.gif',
+'papaimamae.gif', 'porcimaalto.gif','ladim.gif', 'perna.gif', 'perna1.gif', 'porcima.gif','punhetainvertida.gif', 'sofa.gif'];
 
 
 
