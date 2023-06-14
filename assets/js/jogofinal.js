@@ -21,6 +21,7 @@ mul.volume=0.5;
 hom.volume=0.5;
 stripman.volume=0.5;
 stripmulher.volume=0.5;
+let ligou=false;
 
 audio.loop = true;
 addEventListener('click', e=>{
@@ -60,65 +61,77 @@ let demora=0;
 
 
 class Jogador{
-    constructor(nome, pecas, roupas, lista, contador, listaacoes){
+    constructor(nome, pecas, roupas, lista, contador, listafase, listapelado){
         this.nome= nome.toUpperCase();
         this.pecas= pecas;
         if(this.pecas===0){nudez+=1};
         this.roupas= roupas;
         this.lista=lista;
         this.contador=contador;
-        this.listaacoes=listaacoes;
+        this.listafase=[listafase];
+        this.listapelado=listapelado;
     }
 
     get sortear1m(){
         if(this.pecas===0&&nudez===2){return this.sortear2m}
         else{
-            let num1= Math.floor(Math.random()*34);
+            let num1= Math.floor(Math.random()*corpoh.length);
             this.contador+=1;
             if(this.contador%6===0){this.beber};
             if(this.contador%2===0){this.perguntar};
-            if(num1===33&&this.pecas>0){let missao= corpoh[num1]; this.retirarpecam; return missao} 
-            else{
-                //if(this.acoesjafeitas.indexOf(corpoh[num1])===-1){
-                //this.acoesjafeitas.push(corpoh[num1]);} 
-                let missao= corpoh[num1];
-                return missao};
-        }
-    };
+            if(num1===(corpoh.length-1)&&this.pecas>0){let missao= corpoh[num1]; this.retirarpecam; return missao} 
+            console.log(num1);
+            if(this.listafase.indexOf(num1)===-1){
+                    this.listafase.push(num1);
+                    let missao= corpoh[num1];
+                    corpoh.splice(corpoh.indexOf(num1), 1);
+
+                    return missao;
+            } else {let missão='Role o dado novamente'; return missão;} 
+           
+    };}
 
     get sortear1h(){
         if(this.pecas===0&&nudez===2){return this.sortear2h}
-        else{
-            let num1= Math.floor(Math.random()*34);
-            this.contador+=1;
-            if(this.contador%6===0){this.beber};
-            if(this.contador%2===0){this.perguntar};
-            if(num1===33&&this.pecas>0){let missao= corpom[num1]; this.retirarpecah; return missao} 
-            else{
-                //if(this.listaacoes.indexOf(corpom[num1])===-1){
-                //this.listaacoes.push(corpom[num1]);} 
-                let missao= corpom[num1]; return missao};
-        }
+        
+        let num1= Math.floor(Math.random()*34);
+        this.contador+=1;
+        if(this.contador%6===0){this.beber};
+        if(this.contador%2===0){this.perguntar};
+        if(num1===33&&this.pecas>0){let missao= corpom[num1]; this.retirarpecah; return missao} 
+        console.log(num1);
+        if(this.listafase.indexOf(num1)===-1){
+                this.listafase.push(num1);
+                let missao= corpom[num1]; return missao;
+        } else {let missão='Role o dado novamente'; return missão;} 
     };
 
     get sortear2m(){
         const botaodadom= document.querySelector('.levelm');
         botaodadom.classList.add('level2');
         let num= Math.floor(Math.random()*7);
-        let missao= acaom2[num];
         transa+=1;
-        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return  final();};
-        return missao;
+        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return  final();}
+        if(this.listapelado.indexOf(acaom2[num])===-1){this.listapelado.push(acaom2[num]);
+            let missao= acaom2[num];
+            return missao;}
+        else{
+            let missão='Escolha sua ação ou role o dado novamente!'; return missão;}    
     };
 
     get sortear2h(){
         const botaodadoh= document.querySelector('.levelh');
         botaodadoh.classList.add('level2');
         let num= Math.floor(Math.random()*7);
-        let missao= acaoh2[num];
         transa+=1;
-        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return final(); };
-        return missao;
+        if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return  final();}
+        if(this.listapelado.indexOf(acaoh2[num])===-1){this.listapelado.push(acaoh2[num]);
+            let missao= acaoh2[num];
+            return missao;}
+        else{
+            let missão='Escolha sua ação ou role o dado novamente!';
+            return missão;
+        }    
     };
 
     get perguntar(){
@@ -275,13 +288,14 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 
 function resetar(){
     if(ligou){
+        if(document.querySelector('.imagemfinal')){
         document.querySelector('.imagemfinal').src="";
         document.querySelector('.imagemfinal').style.zIndex='-1';
         document.querySelector('.imagemfinal').removeAttribute('class', 'imagemfinal');
         //document.querySelector('.jogofinal').removeChild('img');
         //document.querySelector('.botaozim').style.zIndex='-1';
         //document.querySelector('.botaozim').removeAttribute('class', 'imagemfinal');
-        };
+        }};
     ligou=false;
     aero.play();
     clearInterval(timer);
@@ -299,7 +313,8 @@ function resetar(){
     roupas1[i]= prompt( 'Qual a peça número ' + (i+1) + '?');
     };
     lista1=[];
-    listaacoes1=[];
+    listafase1=[];
+    listapelado1=[];
     bebida1=0;
     contador1=0;
     jog2= prompt("Qual o nome do jogador?") || "Jogador 2";
@@ -310,11 +325,12 @@ function resetar(){
     roupas2[i]= prompt( 'Qual a peça número ' + (i+1) + '?');
     };
     lista2=[];
-    listaacoes2=[];
+    listafase2=[];
+    listapelado2=[];
     bebida2=0;
     contador2=0;
-    mulher= new Jogador(jog1, jog1p, roupas1, lista1, bebida1, contador1, listaacoes1);
-    homem= new Jogador(jog2, jog2p, roupas2, lista2, bebida2, contador2, listaacoes2);
+    mulher= new Jogador(jog1, jog1p, roupas1, lista1, bebida1, contador1, listafase1, listapelado1);
+    homem= new Jogador(jog2, jog2p, roupas2, lista2, bebida2, contador2, listafase2, listapelado2);
     document.querySelector(".jogador1").innerHTML=mulher.nome;
     document.querySelector(".jogador2").innerHTML=homem.nome;
     mulher.listarroupasm;
@@ -346,7 +362,7 @@ function dadoela(){
 };
 
 //FASE 3 - SEXO
-let ligou=false;
+//let ligou=false;
 function transar(){
     
     const kama= confirm("Tenho sugestões de posições baseadas no kamasutra! Você aceita?");
@@ -360,6 +376,8 @@ function transar(){
     return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!";  
 }
 
+//CRIAÇÃO DO KAMASUTRA
+
 function criarimagem(){
     const n= Math.floor(Math.random()*63);
     const imagem=document.createElement('img');
@@ -372,6 +390,7 @@ function criarimagem(){
     imagem.classList.add('imagemfinal');
     //diva.appendChild(botaok);
     diva.appendChild(imagem);
+    jacrioufoto=true;    
     
 }
 
