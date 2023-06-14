@@ -1250,8 +1250,8 @@ footer p:hover{
     margin: 0 auto;
     left: 0;
     right: 0;
-    min-width: 320px;
-    min-height: 320px;
+    min-width: 340px;
+    min-height: 260px;
     z-index: 100; 
     border-radius: 2rem; 
     transition: all 800ms ease-in-out;
