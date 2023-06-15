@@ -262,6 +262,7 @@ function apelar(){
     setTimeout(() => {
         if(homem.pecas>0){homem.retirarpecah; homem.listarroupash;} else{alert(homem.nome + ", você já está nu!")};    
     }, 6000);
+    document.querySelector('#abri').checked=false;
     };
 
 //RELÓGIO
@@ -379,7 +380,7 @@ function transar(){
 //CRIAÇÃO DO KAMASUTRA
 
 function criarimagem(){
-    const n= Math.floor(Math.random()*63);
+    const n= Math.floor(Math.random()*107);
     const imagem=document.createElement('img');
     imagem.src= '/assets/img/kama/'+imagens[n];
     imagem.setAttribute('title', 'clica na imagem para mostrar outra posição');
@@ -395,7 +396,7 @@ function criarimagem(){
 }
 
 function mudarfoto(){
-    const n= Math.floor(Math.random()*91);
+    const n= Math.floor(Math.random()*107);
     const imagem= document.querySelector('.imagemfinal');
     imagem.src='/assets/img/kama/'+imagens[n];
 }
@@ -414,7 +415,10 @@ const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg'
 'anal.gif', 'apoiadanaparece.gif', 'chupandobatendo.gif', 'de4.gif', 'delado.gif', 'deladoatras.gif', 'deladobaixo.gif', 
 'oralnela.gif', 'oralnela1.gif', 'porcimabjo.gif', 'porcimadecosta.gif', 'punheta.gif', 'punheta1.gif', 'vouyer.gif', 
 'beiracama.gif', 'bumbum.gif', 'de4supinado.gif','escancarada.gif', 'escancarada1.gif', 'flecha.gif', 'lavar.gif',
-'papaimamae.gif', 'porcimaalto.gif','ladim.gif', 'perna.gif', 'perna1.gif', 'porcima.gif','punhetainvertida.gif', 'sofa.gif'];
+'papaimamae.gif', 'porcimaalto.gif','ladim.gif', 'perna.gif', 'perna1.gif', 'porcima.gif','punhetainvertida.gif', 'sofa.gif',
+'carregando.gif', 'ladobjo.gif', 'metebjo.gif', 'emcima.gif', 'conchinhaemcima.gif', '69empe.gif', 'apoiada.gif', 
+'apoadadificil.gif', 'chuveiro.gif', 'costabanheiro.gif','ladobeijo.gif', 'gozada.gif', 'masturbando.gif', 'pernalevantada.gif',
+'portrasjanela.gif', 'suspensa.gif'];
 
 
 
