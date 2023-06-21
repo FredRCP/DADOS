@@ -61,7 +61,7 @@ let demora=0;
 
 
 class Jogador{
-    constructor(nome, pecas, roupas, lista, contador, listafase, listapelado){
+    constructor(nome, pecas, roupas, lista, contador, listafase, listapelado, contadorbug){
         this.nome= nome.toUpperCase();
         this.pecas= pecas;
         if(this.pecas===0){nudez+=1};
@@ -70,40 +70,55 @@ class Jogador{
         this.contador=contador;
         this.listafase=[listafase];
         this.listapelado=listapelado;
+        if(this.pecas>3){this.contadorbug= Number(contadorbug) +2;}
+        else{this.contadorbug= Number(contadorbug)};
+        
     }
 
-    get sortear1m(){
+    get sortear1m(){ //ACAO DA MULHER
         if(this.pecas===0&&nudez===2){return this.sortear2m}
         else{
             let num1= Math.floor(Math.random()*corpoh.length);
             this.contador+=1;
             if(this.contador%6===0){this.beber};
             if(this.contador%2===0){this.perguntar};
-            if(num1===(corpoh.length-1)&&this.pecas>0){let missao= corpoh[num1]; this.retirarpecam; return missao} 
-            console.log(num1);
-            if(this.listafase.indexOf(num1)===-1){
-                    this.listafase.push(num1);
-                    let missao= corpoh[num1];
-                    corpoh.splice(corpoh.indexOf(num1), 1);
+            
+            if(num1===33&&this.pecas>0){let missao= corpoh[num1]; this.retirarpecam; return missao} 
 
-                    return missao;
-            } else {let missão='Role o dado novamente'; return missão;} 
-           
-    };}
-
-    get sortear1h(){
-        if(this.pecas===0&&nudez===2){return this.sortear2h}
-        
-        let num1= Math.floor(Math.random()*34);
-        this.contador+=1;
-        if(this.contador%6===0){this.beber};
-        if(this.contador%2===0){this.perguntar};
-        if(num1===33&&this.pecas>0){let missao= corpom[num1]; this.retirarpecah; return missao} 
-        console.log(num1);
-        if(this.listafase.indexOf(num1)===-1){
+            else{    
+            while(this.listafase.indexOf(num1)!==-1){
+                num1=Math.floor(Math.random()*33);
+            }
                 this.listafase.push(num1);
-                let missao= corpom[num1]; return missao;
-        } else {let missão='Role o dado novamente'; return missão;} 
+                let missao= corpoh[num1];
+                this.contadorbug+=1;
+                console.log(this.contadorbug);
+                if(this.listafase.length>=32||this.contadorbug%7===0){let missao= corpoh[33]; this.retirarpecam; return missao} 
+                return missao;}
+        }
+    }
+
+    get sortear1h(){ //ACAO DA HOMEM
+        if(this.pecas===0&&nudez===2){return this.sortear2h}
+        else{
+            let num1= Math.floor(Math.random()*34);
+            this.contador+=1;
+            if(this.contador%6===0){this.beber};
+            if(this.contador%2===0){this.perguntar};
+            
+            if(num1===33&&this.pecas>0){let missao= corpom[num1]; this.retirarpecah; return missao} 
+        
+            else{
+            while(this.listafase.indexOf(num1)!==-1){
+                num1=Math.floor(Math.random()*33);
+            }
+                this.listafase.push(num1);
+                let missao= corpom[num1];
+                this.contadorbug+=1;
+                console.log(this.contadorbug);
+                if(this.listafase.length>=32||this.contadorbug%8===0){let missao= corpoh[33]; this.retirarpecah; return missao}
+                return missao;} 
+        }
     };
 
     get sortear2m(){
@@ -136,7 +151,7 @@ class Jogador{
 
     get perguntar(){
         if(document.querySelector('#perguntas').checked===true){
-            let numero= Math.floor(Math.random()*40);
+            let numero= Math.floor(Math.random()*88);
             if(this.lista.indexOf(perguntas[numero])===-1){
             this.lista.push(perguntas[numero]);
             alert(perguntas[numero]);} else(alert("pergunte o que quiser ao seu parceiro(a)"));
@@ -241,7 +256,7 @@ const acaoh2=["masturbe sua parceira (se tiver algum brinquedinho, você pode us
 
 //PERGUNTAS
 //40
-const perguntas=['descreva sua lingerie/roupa íntima','qual a cor preferida de lingerie/roupa íntima?','qual sua posição preferida?','sexo romântico ou selvagem?',
+const perguntas1=['descreva sua lingerie/roupa íntima','qual a cor preferida de lingerie/roupa íntima?','qual sua posição preferida?','sexo romântico ou selvagem?',
 'conte uma fantasia sexual','parte do corpo que mais gosta no parceiro?','o que ele/ela faz que te deixa com mais tesão?',
 'já fez alguma loucura sexual? conte!','qual parte do seu corpo você mudaria?','já transou em lugares exóticos? se sim, quais?',
 'já transou no primeiro encontro?','é importante o tamanho do pênis/seios do(a) parceiro(a)?','já foi em um strip club?',
@@ -255,6 +270,39 @@ const perguntas=['descreva sua lingerie/roupa íntima','qual a cor preferida de 
 'quando, e onde, foi seu primeiro beijo?','dominar ou ser dominado(a)?','o que mais gosta no seu corpo?',
 'gostar de falar sacanagem? palavrões? xingar?','qual sua fantasia/fetiche mais safado? Descreva como seria!','gosta de apanhar no sexo?',
  'sussurre uma sacanagem no ouvido do seu parceiro(a)', 'seu parceiro pode fazer uma pergunta íntima'];
+
+const perguntas=['descreva sua lingerie/roupa íntima','qual a cor preferida de lingerie/roupa íntima?','qual sua posição preferida?','sexo romântico ou selvagem?',
+    'conte uma fantasia sexual','parte do corpo que mais gosta no parceiro?','o que ele/ela faz que te deixa com mais tesão?',
+    'já fez alguma loucura sexual? conte!','qual parte do seu corpo você mudaria?','já transou em lugares exóticos? se sim, quais?',
+    'já transou no primeiro encontro?','é importante o tamanho do pênis/seios do(a) parceiro(a)?','já foi em um strip club? Tem vontade?',
+    'como fica qdo está muito bêbado(a)? (inconveniente? deprimido(a)? eufórico(a)? tarado(a)?)','com que idade foi sua primeira transa?',
+    'ja deu "bafão" após beber? conte!', 'lugar favorito para transar?', 'já saiu com alguém famoso?', 'transar de manhã, à tarde ou à noite?',
+    'já ficou nu/nua em público?', 'tem vontade de ir em uma praia de nudismo? Conte!', 'o que gosta ou gostaria de comprar em um sex shop?',
+    'faria amor em público/ar livre?', 'já trocou nudes?', 'Gosta de pornografia? vejam um vídeo juntos agora!',
+    'o que melhoraria em seu parceiro/parceira?', 'qual parte do corpo preferida no sexo oposto?',
+    'sexo no escuro ou luz acesa?','o que seu parceiro(a) faz que mais te dá tesão?','o que você faz melhor na cama?',
+    'penetração rápida e profunda, ou lenta e intensa?','com que idade viu pela primeira vez, ao vivo, um(a) pepeka/pau?',
+    'quando, e onde, foi seu primeiro beijo?', 'dominar ou ser dominado(a)?', 'o que mais gosta no seu corpo?',
+    'gostar de falar sacanagem? palavrões? xingar?', 'Palavras te excitam? Quais?', 'Qual sua fantasia/fetiche mais safado? Descreva!', 'gosta de apanhar no sexo?',
+    'sussurre uma sacanagem no ouvido do seu parceiro(a)', 'seu parceiro pode fazer uma pergunta íntima', 'Já ficou com o(a) ex de algum melhor amigo(a)?', 
+    'A coisa mais louca que já fez entre quatro paredes? ', 'Já fingiu na hora H?', 'Você já nadou pelado(a)?', 'Você já beijou mais de uma pessoa no mesmo dia? Quantas?', 
+    'Qual parte do corpo dele/dela você beijaria agora? Siga em frente!', 'Com quantas pessoas você já ficou na vida?', 'Que tipo de pornografia te excita?',
+    'Qual sabor é gostoso de adicionar ao sexo oral?', 'Qual é a zona erógena do seu corpo que mais te excita?', 'Cite uma pessoa do mesmo sexo que você ficaria, se concordasse claro.',
+    'Algemas ou vendas?', 'Você tem sonhos eróticos? Se lembra de algum recente?', 'Que tipo de música é perfeito para transar?', 
+    'Descreva o ambiente perfeito para uma noite de sexo.', 'O que você já fez no sexo que jamais faria de novo.', 'Já fez sexo virtual?', 'Já fez sexo por telefone?', 
+    'Você se lembra de quando começou a se tocar?', 'Qual o maior período de tempo que você já ficou sem transar?', 'Qual foi o máximo de vezes que você já transou em um dia?', 
+    'Já transou com mais de uma pessoa no mesmo dia?', 'Já foi pego no flagra transando ou se masturbando?', 'Já teve orgasmos múltiplos?',
+    'Já fez sexo com mais de uma pessoa ao mesmo tempo?', 'Qual a posiçao sexual que você menos gosta?', 'Depilad@ ou com pelos?', 'Qual a sua posição preferida para se masturbar?', 
+    'O que para você é proibido no sexo?', 'Como foi a primeira vez que alguém te chupou?', 'No que você pensa quando está se masturbando?',
+    'Você já teve orgasmo enquanto dormia?', 'Faça uma lap dance (dança no colo del@)', 'Dê uma aula de educação sexual de uma maneira muito sexy.',
+    'Simule uma dança em pole dance!', 'Faça uma simulação no ar da sua posição sexual favorita.', 
+    'Coloque um cubo de gelo na boca e dê um beijo no pescoço do seu parceiro', 'Qual foi o último pensamento sexual que você teve hoje?',
+    'Que roupa ele/ela deveria vestir hoje se fosse se encontrar com você?',
+    'Quais são as duas palavras que mais te excitam?', 'Já se filmou transando? Se tiver coragem, faça ao final deste jogo!', 'Recomende algum filme excitante?',
+    'Você sente prazer em assistir outras pessoas se tocando?', 'Já foi a uma casa de swing?', 'O que é que você pensa quando quer gozar?', 
+    'O que é mais importante: gozar ou fazer gozar?', 'Já ficou surpreso ao ver o tamanho do membro sexual de outra pessoa?']
+
+
 
 function apelar(){
     if(iniciar===0){return alert('você precisa iniciar o jogo!')};
@@ -318,6 +366,7 @@ function resetar(){
     listapelado1=[];
     bebida1=0;
     contador1=0;
+    contadorbug1=0;
     jog2= prompt("Qual o nome do jogador?") || "Jogador 2";
     jog2p= Number(prompt("Quantas peças de roupa está usando? Não inclua os calçados."));
     roupas2=[];
@@ -330,8 +379,9 @@ function resetar(){
     listapelado2=[];
     bebida2=0;
     contador2=0;
-    mulher= new Jogador(jog1, jog1p, roupas1, lista1, bebida1, contador1, listafase1, listapelado1);
-    homem= new Jogador(jog2, jog2p, roupas2, lista2, bebida2, contador2, listafase2, listapelado2);
+    contadorbug2=0;
+    mulher= new Jogador(jog1, jog1p, roupas1, lista1, bebida1, contador1, listafase1, listapelado1, contadorbug1);
+    homem= new Jogador(jog2, jog2p, roupas2, lista2, bebida2, contador2, listafase2, listapelado2, contadorbug2);
     document.querySelector(".jogador1").innerHTML=mulher.nome;
     document.querySelector(".jogador2").innerHTML=homem.nome;
     mulher.listarroupasm;
