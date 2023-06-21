@@ -337,8 +337,8 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 let senha='';
 function resetar(){
-    senha= prompt('Qual é a senha?');
-    if(senha!=123){return alert('Digite a senha correta!')}
+    //senha= prompt('Qual é a senha?');
+    //if(senha!=123){return alert('Digite a senha correta!')}
     if(ligou){
         if(document.querySelector('.imagemfinal')){
         document.querySelector('.imagemfinal').src="";
