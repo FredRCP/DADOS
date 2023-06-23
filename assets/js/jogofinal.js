@@ -151,7 +151,7 @@ class Jogador{
 
     get perguntar(){
         if(document.querySelector('#perguntas').checked===true){
-            let numero= Math.floor(Math.random()*89);
+            let numero= Math.floor(Math.random()*96);
             if(this.lista.indexOf(perguntas[numero])===-1){
             this.lista.push(perguntas[numero]);
             alert(perguntas[numero]);} else(alert("pergunte o que quiser ao seu parceiro(a)"));
@@ -276,10 +276,11 @@ const perguntas=['Descreva sua lingerie/roupa íntima','Qual a cor preferida de 
     'Já fez alguma loucura sexual? Conte!','Qual parte do seu corpo você mudaria?','Já transou em lugares exóticos? Se sim, quais?',
     'Já transou no primeiro encontro?','Você acha importante o tamanho do pênis/seios do(a) parceiro(a)?','Já foi em um strip club? Tem vontade?',
     'Como fica quando está muito bêbado(a)? (inconveniente? deprimido(a)? eufórico(a)? tarado(a)?)','Com que idade foi sua primeira transa?',
-    'Já deu "bafão" após beber? Conte!', 'Fale seu lugar favorito para transar?', 'Já saiu com alguém famoso/a?', 'Transar de manhã, à tarde ou à noite?',
+    'Já deu "bafão" após beber? Conte!', 'Fale seu lugar favorito para transar?', 'Já saiu com alguém famoso/a? Com qual tinha vontade!?',
+    'Transar de manhã, à tarde ou à noite?', 'Encoste ele/ela na parede, e deem um amasso bem quente!', 'Descreva com tem que ser suas preliminares',
     'Já ficou nu/nua em público?', 'Tem vontade de ir em uma praia de nudismo? Conte!', 'O que gosta ou gostaria de comprar em um sex shop?',
     'Faria amor em público/ar livre?', 'Já trocou nudes?', 'Gosta de pornografia? Vejam um vídeo juntos agora!',
-    'O que melhoraria em seu parceiro/parceira?', 'Qual parte do corpo preferida no sexo oposto?',
+    'O que melhoraria em seu parceiro/parceira?', 'Qual parte do corpo preferida no sexo oposto?', 
     'Sexo no escuro ou luz acesa?','O que seu parceiro(a) faz que mais te dá tesão?','O que você faz melhor na cama?',
     'Penetração rápida e profunda, ou lenta e intensa?','Com que idade viu pela primeira vez, ao vivo, um(a) pepeka/pau?',
     'Quando, e onde, foi seu primeiro beijo?', 'Dominar ou ser dominado(a)?', 'O que mais gosta no seu corpo?',
@@ -301,7 +302,10 @@ const perguntas=['Descreva sua lingerie/roupa íntima','Qual a cor preferida de 
     'Quais são as duas palavras que mais te excitam?', 'Já se filmou transando? Se tiver coragem, faça ao final deste jogo!', 'Recomende algum filme excitante!',
     'Você sente prazer em assistir outras pessoas se tocando?', 'Já foi a uma casa de swing?', 'O que é que você pensa quando quer gozar?', 
     'O que é mais importante: gozar ou fazer gozar?', 'Já ficou surpreso ao ver o tamanho do membro sexual de outra pessoa?',
-    'Quando fez sexo oral pela primeira vez?']
+    'Quando fez sexo oral pela primeira vez?', 'Demonstre com as mãos ou dedos como gostaria que fosse o sexo oral em você',
+    'Demonstre, mesmo vestidos, uma posição que gostaria de experimentar', 'Invente um nome de "guerra" para usar daqui em diante',
+    'Coloque o dedo na boca do seu parceiro/a e mantendo contato visual, peça que seja criativo com a língua',
+    'Em pé, se olhem fixamente por 30 segundos, em seguida beijem-sem bem gostoso.',]
 
 
 
@@ -337,8 +341,8 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 let senha='';
 function resetar(){
-    //senha= prompt('Qual é a senha?');
-    //if(senha!=123){return alert('Digite a senha correta!')}
+    senha= prompt('Qual é a senha?');
+    if(senha!=123){return alert('Digite a senha correta!')}
     if(ligou){
         if(document.querySelector('.imagemfinal')){
         document.querySelector('.imagemfinal').src="";
