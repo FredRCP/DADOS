@@ -1050,17 +1050,17 @@ footer p:hover{
 
     .play{
         margin-left: 0rem;   
-        margin-top: 0rem;
+        margin-top: 0.4rem;
     }
 
     .play h1{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .play p{
         font-weight: 500;
         margin-top: 1rem;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     
     .play ol{
@@ -1071,7 +1071,7 @@ footer p:hover{
     }
     
     .play ol li{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 500;
         text-shadow: 2px; 
     }
