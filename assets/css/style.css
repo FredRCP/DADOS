@@ -1205,11 +1205,11 @@ footer p:hover{
 
     .play{
         margin-left: 0rem;   
-        margin-top: 1rem;
+        margin-top: 0rem;
     }
 
     .play h1{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .play p{
@@ -1217,7 +1217,7 @@ footer p:hover{
     }
 
     #playlist p{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .play ol{
@@ -1227,7 +1227,7 @@ footer p:hover{
     }
     
     .play ol li{
-        font-size: 1.1rem; 
+        font-size: 1.0rem; 
     }
 
     .home{
