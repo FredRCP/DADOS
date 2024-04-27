@@ -1008,6 +1008,7 @@ footer p:hover{
         grid-template-columns: 20px 1fr;
         justify-content: center;
         align-items: center;
+        overflow-y: scroll;
     }
     
     .regra img{
