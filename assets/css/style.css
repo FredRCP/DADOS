@@ -1205,7 +1205,7 @@ footer p:hover{
 
     .play{
         margin-left: 0rem;   
-        margin-top: 0rem;
+        margin-top: 1rem;
     }
 
     .play h1{
@@ -1222,7 +1222,7 @@ footer p:hover{
     
     .play ol{
         grid-template-columns: 1fr;
-        gap: 0.4rem  0;
+        gap: 0.3rem  0;
         margin-top: 0rem;
     }
     
