@@ -1209,7 +1209,7 @@ footer p:hover{
     }
 
     .play h1{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .play p{
@@ -1217,12 +1217,12 @@ footer p:hover{
     }
 
     #playlist p{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .play ol{
         grid-template-columns: 1fr;
-        gap: 0.5rem  0;
+        gap: 0.4rem  0;
         margin-top: 0rem;
     }
     
