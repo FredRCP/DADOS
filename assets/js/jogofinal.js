@@ -50,6 +50,34 @@ addEventListener('click', e=>{
     } 
     })
 
+
+    if ('getGamepads' in navigator) {
+        // Função para atualizar o estado do joystick
+        function updateGamepad() {
+          // Obtém os gamepads conectados
+          const gamepads = navigator.getGamepads();
+      
+          // Verifica se há algum gamepad conectado
+          if (gamepads.length > 0) {
+            const gamepad = gamepads[0]; // Obtém o primeiro gamepad
+      
+            // Acesse as propriedades do gamepad, por exemplo:
+            const buttonPressed = gamepad.buttons[0].pressed;
+            const joystickX = gamepad.axes[0];
+            const joystickY = gamepad.axes[1];
+
+            if(gamepad.buttons[0].pressed){alert('oie')}
+      
+            // Faça algo com os valores obtidos do joystick
+            // Por exemplo, atualize a posição do jogador em um jogo
+          }
+        }}
+
+        document.addEventListener("keydown", function(event) {
+            console.log(event.keyCode);
+      }, true);
+          
+
 //CRIAÇÃO DA CLASSE DOS JOGADORES
 let ativar=false;
 let timer;
@@ -123,7 +151,7 @@ class Jogador{
 
     get sortear2m(){
         const botaodadom= document.querySelector('.levelm');
-        botaodadom.classList.add('level2');
+        botaodadom.classList.add('level2f');
         let num= Math.floor(Math.random()*7);
         transa+=1;
         if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return  final();}
@@ -136,7 +164,7 @@ class Jogador{
 
     get sortear2h(){
         const botaodadoh= document.querySelector('.levelh');
-        botaodadoh.classList.add('level2');
+        botaodadoh.classList.add('level2m');
         let num= Math.floor(Math.random()*7);
         transa+=1;
         if(transa>=10){alert("FIM DE JOGO! HORA DE TRANSAR!!!"); return  final();}
@@ -341,8 +369,8 @@ relogio.innerHTML = criaHoraDosSegundos(segundos);
 //INICIAR
 let senha='';
 function resetar(){
-    //senha= prompt('Qual é a senha?');
-    //if(senha!=123){return alert('Digite a senha correta!')}
+    senha= prompt('Qual é a senha?');
+    if(senha!=123){return alert('Digite a senha correta!')}
     if(ligou){
         if(document.querySelector('.imagemfinal')){
         document.querySelector('.imagemfinal').src="";
@@ -401,8 +429,8 @@ function resetar(){
     setTimeout(()=>{message.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 1200000);
     const botaodadoh=document.querySelector('.levelh');
     const botaodadom=document.querySelector('.levelm');
-    botaodadom.classList.remove('level2');
-    botaodadoh.classList.remove('level2');
+    botaodadom.classList.remove('level2f');
+    botaodadoh.classList.remove('level2m');
 };
 
 //DADOS
