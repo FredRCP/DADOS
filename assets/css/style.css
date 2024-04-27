@@ -371,24 +371,48 @@ legend{
 
 .jogo button{
     color: yellow;
-    border-radius: 2rem;
-    background-color: purple;
+    border-radius: 35%;
+    background-color: rgba(143, 79, 143, 0.596);
     padding: 1rem;
-    border: solid 0.2rem yellow;
+    border: solid 0.2rem rgb(248, 247, 248);
     transition: all 500ms ease-in-out;
     cursor: pointer;
 }
 .jogo button:hover{
-    background-color: blueviolet;   
+    background-color: rgb(190, 152, 226);   
     color: whitesmoke; 
     font-weight: 900;
+    
 }
 
-.jogo .level2{
-    background-image: url('/assets/img/flamefire.gif');
+.levelm{
+    background-image: url('/assets/img/femea.png');
+    background-size:80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.levelh{
+    background-image: url('/assets/img/macho.png');
+    background-size:80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jogo .level2f{
+    background-image: url('/assets/img/femealevel2.gif');
     background-size: cover;
     background-position: center;
-    color: yellow;
+    background-size:80%;
+
+}
+
+.jogo .level2m{
+    background-image: url('/assets/img/macholevel2.gif');
+    background-size: cover;
+    background-position: center;
+    background-size:80%;
+ 
 }
 
 .colunadir{
