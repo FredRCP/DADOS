@@ -122,6 +122,7 @@ ul li a:hover::after{
     right: 2.5rem;
     transition: all 500ms ease-in-out;
     cursor: pointer;
+    z-index: 30;
 }
 
 .menuplay:hover{ 
@@ -913,23 +914,26 @@ footer p:hover{
         content: "≡";
         position: fixed;
         z-index: 80;
-        top: 1.5rem;
-        right: 1.5rem;
+        top: 1rem;
+        right: 1rem;
         background-color: rgb(41, 11, 58);
         color: white;
         font-size: 3.2rem;
-        line-height: 2.1rem;
-        height: 2.2rem;
-        width: 2rem;
+        line-height: 2.8rem;
+        height: 3.2rem;
+        width: 3.2rem;
         text-align: center;
         padding: 0.2rem;
+        border-radius: 0.5rem;
         cursor: pointer;
     }
 
     .close:checked~aside{
         display: block;
         width: 92vw;
-        height: 400px;
+        height: auto;
+        max-height: 80vh;
+        overflow-y: auto;
         background-color: whitesmoke;
         border: solid 0.3rem rgb(41, 11, 58);  
         z-index: 40;
@@ -941,7 +945,8 @@ footer p:hover{
 
     .close:checked~aside .intro{
         width: 90vw;
-        height: 352px;
+        height: auto;
+        padding: 2rem 0;
     }
 
     .close:checked~aside .intro, .close:checked~aside .intro li a, .close:checked~aside h1 {
