@@ -457,14 +457,14 @@ function rolarComAnimacao(mostrarResultado){
     const dadoEl = document.querySelector('#dadoRolando');
     const textoEl = document.querySelector('#resultadoTexto');
 
-    dadoEl.classList.add('ativo');
+    dadoEl.classList.add('girando');
     textoEl.classList.add('escondido');
 
     setTimeout(() => {
         mostrarResultado();
-        dadoEl.classList.remove('ativo');
+        dadoEl.classList.remove('girando');
         textoEl.classList.remove('escondido');
-    }, 1500);
+    }, 1600);
 }
 
 //FASE 3 - SEXO
