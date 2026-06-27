@@ -26,6 +26,7 @@ body{
 
 .intro h1{
     transition:all 500ms ease-in-out;
+    text-align: center;
 }
 
 .intro h1:hover{
@@ -929,30 +930,93 @@ footer p:hover{
     }
 
     .close:checked~aside{
-        display: block;
+        display: flex;
         width: 92vw;
         height: auto;
         max-height: 80vh;
         overflow-y: auto;
         background-color: whitesmoke;
-        border: solid 0.3rem rgb(41, 11, 58);  
+        border: solid 0.2rem rgb(41, 11, 58);  
         z-index: 40;
         justify-content: center;
         align-items: center;
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
+        border-radius: 1.2rem;
+        box-shadow: 0 1.5rem 4rem rgba(41, 11, 58, 0.45);
+        animation: menuAbre 350ms ease-out;
+    }
+
+    @keyframes menuAbre {
+        from {
+            opacity: 0;
+            transform: translateY(-1.5rem) scale(0.96);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .close:checked~aside::before{
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: rgba(20, 5, 30, 0.55);
+        backdrop-filter: blur(0.3rem);
     }
 
     .close:checked~aside .intro{
         width: 90vw;
         height: auto;
-        padding: 2rem 0;
+        padding: 2.4rem 0 1.6rem;
+        gap: 1.5rem;
     }
 
     .close:checked~aside .intro, .close:checked~aside .intro li a, .close:checked~aside h1 {
         background-color: whitesmoke;
         color: rgb(41, 11, 58);
         background-image: none;
+    }
+
+    .close:checked~aside h1{
+        font-size: 2.2rem;
+        letter-spacing: 0.1rem;
+        padding-bottom: 1.4rem;
+        border-bottom: 0.15rem solid rgba(41, 11, 58, 0.18);
+        width: 80%;
+    }
+
+    .close:checked~aside .intro ul{
+        gap: 1.2rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .close:checked~aside .intro li{
+        width: 75%;
+    }
+
+    .close:checked~aside .intro li a{
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        background-color: rgba(41, 11, 58, 0.06);
+        border-radius: 0.8rem;
+        padding: 0.9rem 1rem;
+        transition: all 250ms ease-in-out;
+    }
+
+    .close:checked~aside .intro li a:hover,
+    .close:checked~aside .intro li a:active{
+        background-color: rgb(41, 11, 58);
+        color: whitesmoke;
+        transform: scale(1.03);
+    }
+
+    .close:checked~aside .intro li a::after{
+        display: none;
     }
 
     .close:checked~.closelabel::after{
