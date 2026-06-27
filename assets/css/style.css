@@ -486,6 +486,29 @@ legend{
     color: whitesmoke;
 }
 
+.dado-rolando{
+    display: none;
+    font-size: 6rem;
+    line-height: 1;
+}
+
+.dado-rolando.ativo{
+    display: inline-block;
+    animation: girarDado 600ms ease-in-out infinite;
+}
+
+@keyframes girarDado {
+    0%   { transform: rotate(0deg) scale(1); }
+    25%  { transform: rotate(90deg) scale(1.15); }
+    50%  { transform: rotate(180deg) scale(1); }
+    75%  { transform: rotate(270deg) scale(1.15); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+#resultadoTexto.escondido{
+    display: none;
+}
+
 .colunadir .versus img{
     width: 80px;
     height: 80px; 
