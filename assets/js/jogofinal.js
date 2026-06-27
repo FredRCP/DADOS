@@ -423,8 +423,8 @@ function resetar(){
     homem.listarroupash;
     const imagem= document.createElement('img');
     imagem.setAttribute('src','/assets/img/roxinhofogosem.png');
-    document.querySelector('.resultadojogo').innerHTML="";
-    document.querySelector('.resultadojogo').appendChild(imagem);
+    document.querySelector('#resultadoTexto').innerHTML="";
+    document.querySelector('#resultadoTexto').appendChild(imagem);
     iniciaRelogio();
     setTimeout(()=>{message.play(); alert("Casal já se passaram alguns bons minutinhos, cliquem em avançar")}, 1200000);
     const botaodadoh=document.querySelector('.levelh');
@@ -438,14 +438,34 @@ function resetar(){
 function dadoele(){
     if(iniciar===0){return alert('você precisa abrir o menu e iniciar o jogo!')};
     dice.play();
-    document.querySelector('.resultadojogo').innerHTML= homem.nome +"<br>" +homem.sortear1h; 
+    rolarComAnimacao(() => {
+        document.querySelector('#resultadoTexto').innerHTML= homem.nome +"<br>" +homem.sortear1h;
+    });
 };
 
 function dadoela(){
     if(iniciar===0){return alert('você precisa abrir o menu e iniciar o jogo!')};
     dice.play();
-    document.querySelector('.resultadojogo').innerHTML=mulher.nome +"<br>"  +mulher.sortear1m;
+    rolarComAnimacao(() => {
+        document.querySelector('#resultadoTexto').innerHTML=mulher.nome +"<br>"  +mulher.sortear1m;
+    });
 };
+
+// Mostra a animação de "dado rolando" por um curto período antes
+// de revelar o resultado sorteado, dando um efeito de suspense.
+function rolarComAnimacao(mostrarResultado){
+    const dadoEl = document.querySelector('#dadoRolando');
+    const textoEl = document.querySelector('#resultadoTexto');
+
+    dadoEl.classList.add('ativo');
+    textoEl.classList.add('escondido');
+
+    setTimeout(() => {
+        mostrarResultado();
+        dadoEl.classList.remove('ativo');
+        textoEl.classList.remove('escondido');
+    }, 1500);
+}
 
 //FASE 3 - SEXO
 //let ligou=false;
@@ -459,7 +479,7 @@ function transar(){
     }    
     else{alert('Divirtam-se! Obrigado por participarem do jogo.'); ligou=false;}
     iniciar=0;
-    return document.querySelector('.resultadojogo').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!";  
+    return document.querySelector('#resultadoTexto').innerHTML= "FIM DE JOGO! HORA DE TRANSAR!!!";  
 }
 
 //CRIAÇÃO DO KAMASUTRA
@@ -504,15 +524,3 @@ const imagens= ['69emponte.jpeg', '69.jpeg', 'anjinhananeve.jpeg', 'aranha.jpeg'
 'carregando.gif', 'ladobjo.gif', 'metebjo.gif', 'emcima.gif', 'conchinhaemcima.gif', '69empe.gif', 'apoiada.gif', 
 'apoadadificil.gif', 'chuveiro.gif', 'costabanheiro.gif','ladobeijo.gif', 'gozada.gif', 'masturbando.gif', 'pernalevantada.gif',
 'portrasjanela.gif', 'suspensa.gif'];
-
-
-
-
-
-
-
-
-
-
-
-
